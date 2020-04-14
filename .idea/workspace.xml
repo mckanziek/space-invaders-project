@@ -36,8 +36,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586870179892</updated>
-      <workItem from="1586870189440" duration="709000" />
+      <workItem from="1586870189440" duration="1071000" />
     </task>
+    <task id="LOCAL-00001" summary="commit test">
+      <created>1586871199927</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586871199927</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -50,6 +58,10 @@
         <option value="$PROJECT_DIR$/src/scenes/game.js" />
       </list>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit test" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="26" y="99" width="890" height="915" key="CommitChangelistDialog2" timestamp="1586871182655">
