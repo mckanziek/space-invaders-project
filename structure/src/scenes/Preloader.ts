@@ -3,7 +3,9 @@ export class Preloader extends Phaser.Scene {
         super({
             key: 'preloader',
             pack: {
-                files: []
+                files: [
+                    {type: 'image', key: 'shipTest', url: './assets/spritesheets/shipTest.png'},
+                ]
             }
         });
     }
