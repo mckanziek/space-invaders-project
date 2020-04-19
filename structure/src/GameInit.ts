@@ -6,7 +6,14 @@ const config: GameConfig = {
     type: Phaser.AUTO,
     parent: "canvas",
     width: 960,
-    height: 540,
+    height: 560,
+    physics: {
+        default: "arcade",
+        arcade: {
+            gravity: {y: 0},
+            debug: false
+        }
+    },
     scene: [
         Preloader,
         Main,
