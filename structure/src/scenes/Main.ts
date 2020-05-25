@@ -21,12 +21,13 @@ export class Main extends Phaser.Scene {
 
     init(){
         this.key = this.input.keyboard.createCursorKeys();
-        this.enemies = this.add.group({runChildUpdate: true});
+
     }
 
     create() {
         this.player = new Player(this, 'shipTest', this.key);
 
+        this.enemies = this.add.group({runChildUpdate: true});
         for(let i = 0; i < 5; i++){
             const row = [];
             for(let j = 0; j < 11; j++){
@@ -41,13 +42,23 @@ export class Main extends Phaser.Scene {
             }
             this.enemiesReferGrid.push(row);
         }
+
+        // @ts-ignore
+        this.enemies.getChildren().forEach(enemy => console.log(enemy.id));
     }
 
     update(time: integer) {
         this.player.move();
 
         // @ts-ignore
-        //this.enemies.getChildren().forEach(enemy => enemy.updatePosition(time, this.enemiesDirection));
+        this.enemies.getChildren().forEach(enemy => enemy.getCoordinates());
+
+        // @ts-ignore
+        //this.enemies.getChildren().forEach(enemy => console.log(enemy));
+
+        /*this.enemies.getChildren().forEach((enemy: Enemy) => {
+            enemy.updatePosition(time, this.enemiesDirection)
+        });*/
 
         /*this.enemies.getChildren().forEach(enemy => {
             if(this.canGoDown && enemy.x >= this.sys.canvas.width - enemy.width * 4){
@@ -90,7 +101,7 @@ export class Main extends Phaser.Scene {
             }
         }
 
-        console.log(minXEnemy + " " + maxXEnemy)
+        return [minXEnemy, maxXEnemy];
     }
 
     setEnemiesDirection(direction: integer){
