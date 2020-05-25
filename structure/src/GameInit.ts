@@ -20,4 +20,6 @@ const config: GameConfig = {
     ]
 };
 
-const gameInit = new Phaser.Game(config);
+window.addEventListener('load', ()=>{
+    const gameInit = new Phaser.Game(config);
+})
