@@ -16,7 +16,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Assets folder" />
+    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Assets folder">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/game.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/game.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Main.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,6 +82,7 @@
       <workItem from="1589626914335" duration="1443000" />
       <workItem from="1589791525657" duration="690000" />
       <workItem from="1590354490784" duration="8443000" />
+      <workItem from="1590432675321" duration="4183000" />
     </task>
     <task id="LOCAL-00001" summary="commit test">
       <created>1586871199927</created>
@@ -172,13 +178,18 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="191" y="340" width="578" height="426" key="git4idea.merge.GitMergeDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1587640675297" />
+    <state x="588" y="333" width="734" height="413" key="git4idea.merge.GitPullDialog" timestamp="1590432593554">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="588" y="333" width="734" height="413" key="git4idea.merge.GitPullDialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590432593554" />
     <state x="0" y="144" width="1347" height="817" key="new project wizard" timestamp="1587857666326">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="0" y="144" width="1347" height="817" key="new project wizard/0.27.1920.1053@0.27.1920.1053" timestamp="1587857666326" />
-    <state x="623" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1590364307211">
+    <state x="623" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1590435713590">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="623" y="217" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/0.27.1920.1053@0.27.1920.1053" timestamp="1590364307211" />
+    <state x="623" y="217" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590435713590" />
   </component>
 </project>

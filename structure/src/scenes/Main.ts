@@ -67,7 +67,6 @@ export class Main extends Phaser.Scene {
 
         this.enemies.getChildren().forEach((enemy: Enemy) => {
             this.physics.add.collider(shot, enemy, function () {
-                console.log(enemy.getCoordinates())
                 grid[Number(enemy.getCoordinates()[1])][Number(enemy.getCoordinates()[0])] = 0;
 
                 enemy.destroy();
@@ -75,12 +74,23 @@ export class Main extends Phaser.Scene {
             })
         });
 
-        this.enemiesReferGrid = grid;
+        this.getEnemiesAreaRange();
 
-        console.log(this.enemiesReferGrid)
+        this.enemiesReferGrid = grid;
     }
 
-    getEnemiesArea(){
+    getEnemiesAreaRange(){
+        var minXEnemy = 10;
+        var maxXEnemy = 0;
+
+        for(let i = 0; i < this.enemiesReferGrid.length; i++){
+            for(let j = this.enemiesReferGrid[i].length - 1; j >= 0; j--){
+                maxXEnemy = (this.enemiesReferGrid[i][j] && j > maxXEnemy) ? j : maxXEnemy;
+                minXEnemy = (this.enemiesReferGrid[i][(10 - j)] && (10 - j) < minXEnemy) ? (10 - j) : minXEnemy;
+            }
+        }
+
+        console.log(minXEnemy + " " + maxXEnemy)
     }
 
     setEnemiesDirection(direction: integer){
