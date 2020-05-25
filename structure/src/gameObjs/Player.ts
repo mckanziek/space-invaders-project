@@ -1,18 +1,20 @@
-import { Shot } from "./Shot"
+import {Shot} from "./Shot";
 
 export class Player extends Phaser.GameObjects.Image {
+    private mainScene: any;
     private canvas: any;
     private inputKey: any;
     private customKeys: any = {};
     private health: Phaser.GameObjects.Group = this.scene.add.group();
     private bulletsAlive: Phaser.GameObjects.Group = this.scene.add.group();
 
-    constructor(scene: any, spritesheet: any, inputKey: any, canvas: any) {
-        super(scene, 0, 0, spritesheet);
+    constructor(scene: any, spriteSheet: any, inputKey: any, canvas: any) {
+        super(scene, 0, 0, spriteSheet);
 
         this.inputKey = inputKey;
         this.customKeys.D = this.scene.input.keyboard.addKey('D');
 
+        this.mainScene = scene;
         this.canvas = canvas;
 
         let scale = 70 / this.width;
@@ -27,8 +29,8 @@ export class Player extends Phaser.GameObjects.Image {
         this.setHealt();
     }
 
-    setHealt(){
-        for(let i = 0; i < 3; i++){
+    setHealt() {
+        for (let i = 0; i < 3; i++) {
             let healthObj = this.scene.add.image(0, 0, 'healthTest');
             let scale = 25 / healthObj.width;
 
@@ -40,20 +42,24 @@ export class Player extends Phaser.GameObjects.Image {
         }
     }
 
-    decraseHealt(){
+    decraseHealt() {
         this.health.getChildren()[this.health.getChildren().length - 1].destroy();
     }
 
-    move(){
-        if(this.inputKey.left.isDown)
+    move() {
+        if (this.inputKey.left.isDown)
             this.x += -5;
-        if(this.inputKey.right.isDown)
+        if (this.inputKey.right.isDown)
             this.x += 5;
-        if(this.inputKey.space.isDown && this.bulletsAlive.getLength() < 1)
-            this.bulletsAlive.add(new Shot(this.scene, this.x, this.y, 'shotTest'));
-        if(this.bulletsAlive.getLength() > 0)
+        if (this.inputKey.space.isDown && this.bulletsAlive.getLength() < 1) {
+            const shot = new Shot(this.scene, this.x, this.y, 'shotTest');
+            this.bulletsAlive.add(shot);
+
+            this.mainScene.checkCollision(shot);
+        }
+        if (this.bulletsAlive.getLength() > 0)
             this.bulletsAlive.getChildren()[0].update();
 
-        if(this.customKeys.D.isDown) this.decraseHealt();
+        if (this.customKeys.D.isDown) this.decraseHealt();
     }
 }

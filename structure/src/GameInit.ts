@@ -1,17 +1,17 @@
 import "phaser";
-import { Preloader } from './scenes/Preloader';
-import { Main } from './scenes/Main';
-    
+import {Preloader} from './scenes/Preloader';
+import {Main} from './scenes/Main';
+
 const config: GameConfig = {
-    type: Phaser.AUTO,
+    type: Phaser.AUTO, //Setta automaticamente il motore per il renderizzato
     parent: "canvas",
-    width: 960,
+    width: 666,
     height: 560,
     physics: {
         default: "arcade",
         arcade: {
             gravity: {y: 0},
-            debug: false
+            debug: true
         }
     },
     scene: [
