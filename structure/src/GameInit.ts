@@ -5,7 +5,7 @@ import {Main} from './scenes/Main';
 const config: GameConfig = {
     type: Phaser.AUTO, //Setta automaticamente il motore per il renderizzato
     parent: "canvas",
-    width: 666,
+    width: 720,
     height: 560,
     physics: {
         default: "arcade",

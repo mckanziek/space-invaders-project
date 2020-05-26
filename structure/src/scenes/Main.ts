@@ -7,8 +7,6 @@ export class Main extends Phaser.Scene {
 
     private player: Player | any;
 
-    private canGoDown: boolean = true;
-
     private enemiesMarginGrid: number = 50;
     private enemiesReferGrid: Array<number[]> = [];
 
@@ -21,7 +19,6 @@ export class Main extends Phaser.Scene {
 
     init(){
         this.key = this.input.keyboard.createCursorKeys();
-
     }
 
     create() {
@@ -42,35 +39,12 @@ export class Main extends Phaser.Scene {
             }
             this.enemiesReferGrid.push(row);
         }
-
-        // @ts-ignore
-        this.enemies.getChildren().forEach(enemy => console.log(enemy.id));
     }
 
     update(time: integer) {
         this.player.move();
 
-        // @ts-ignore
-        this.enemies.getChildren().forEach(enemy => enemy.getCoordinates());
-
-        // @ts-ignore
-        //this.enemies.getChildren().forEach(enemy => console.log(enemy));
-
-        /*this.enemies.getChildren().forEach((enemy: Enemy) => {
-            enemy.updatePosition(time, this.enemiesDirection)
-        });*/
-
-        /*this.enemies.getChildren().forEach(enemy => {
-            if(this.canGoDown && enemy.x >= this.sys.canvas.width - enemy.width * 4){
-                this.goDownEnemy(0);
-                this.canGoDown = false;
-            }
-            if(!this.canGoDown && enemy.x <= enemy.width * 4){
-                this.goDownEnemy(50);
-                this.canGoDown = true;
-            }
-        });*/
-
+        Enemy.updatePosition(time, this.enemiesDirection, this, this.sys.canvas);
     }
 
     checkCollision(shot: any){
@@ -80,12 +54,12 @@ export class Main extends Phaser.Scene {
             this.physics.add.collider(shot, enemy, function () {
                 grid[Number(enemy.getCoordinates()[1])][Number(enemy.getCoordinates()[0])] = 0;
 
-                enemy.destroy();
+                enemy.setActive(false);
+                enemy.setVisible(false);
+
                 shot.destroy();
             })
         });
-
-        this.getEnemiesAreaRange();
 
         this.enemiesReferGrid = grid;
     }
@@ -94,14 +68,24 @@ export class Main extends Phaser.Scene {
         var minXEnemy = 10;
         var maxXEnemy = 0;
 
+        var firstEnemy;
+        var lastEnemy;
+
         for(let i = 0; i < this.enemiesReferGrid.length; i++){
             for(let j = this.enemiesReferGrid[i].length - 1; j >= 0; j--){
-                maxXEnemy = (this.enemiesReferGrid[i][j] && j > maxXEnemy) ? j : maxXEnemy;
-                minXEnemy = (this.enemiesReferGrid[i][(10 - j)] && (10 - j) < minXEnemy) ? (10 - j) : minXEnemy;
+                if(this.enemiesReferGrid[i][j] && j > maxXEnemy){
+                    maxXEnemy = j;
+                    lastEnemy = this.enemies.getChildren()[((i * 10) + j)];
+                }
+
+                if(this.enemiesReferGrid[i][(10 - j)] && (10 - j) < minXEnemy){
+                    minXEnemy = (10 - j);
+                    firstEnemy = this.enemies.getChildren()[((i * 10) + (10 - j))];
+                }
             }
         }
 
-        return [minXEnemy, maxXEnemy];
+        return [minXEnemy, maxXEnemy, firstEnemy, lastEnemy];
     }
 
     setEnemiesDirection(direction: integer){

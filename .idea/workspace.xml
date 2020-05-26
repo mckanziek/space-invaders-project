@@ -16,9 +16,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Enemies Position">
+    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Enemies moves">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/game.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/game.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/GameInit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/GameInit.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/scenes/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Main.ts" afterDir="false" />
     </list>
@@ -82,7 +83,7 @@
       <workItem from="1589626914335" duration="1443000" />
       <workItem from="1589791525657" duration="690000" />
       <workItem from="1590354490784" duration="8443000" />
-      <workItem from="1590432675321" duration="8255000" />
+      <workItem from="1590432675321" duration="21981000" />
     </task>
     <task id="LOCAL-00001" summary="commit test">
       <created>1586871199927</created>
@@ -105,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590436965213</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Enemies moves">
+      <created>1590441141828</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590441141828</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,7 +160,8 @@
     <MESSAGE value="commit test" />
     <MESSAGE value="Assets folder" />
     <MESSAGE value="Enemies Position" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enemies Position" />
+    <MESSAGE value="Enemies moves" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enemies moves" />
   </component>
   <component name="WindowStateProjectService">
     <state x="26" y="99" width="890" height="915" key="CommitChangelistDialog2" timestamp="1586871182655">
@@ -194,10 +203,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="0" y="144" width="1347" height="817" key="new project wizard/0.27.1920.1053@0.27.1920.1053" timestamp="1587857666326" />
-    <state x="623" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1590438366560">
+    <state x="623" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1590442792611">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="623" y="217" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/0.27.1920.1053@0.27.1920.1053" timestamp="1590364307211" />
-    <state x="623" y="217" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590438366560" />
+    <state x="623" y="217" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590442792611" />
   </component>
 </project>

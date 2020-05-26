@@ -1,65 +1,58 @@
-import {Shot} from "./Shot";
-import {Player} from "./Player";
-
 export class Enemy extends Phaser.GameObjects.Image {
-    private id: string;
-    private tweenMoves: Phaser.Tweens.Tween | undefined;
+    private readonly id: string;
 
-    private mainScene: any;
-    private canvas: any;
-
-    private speed: integer = 1000;
-    private timingMove = 0;
+    private static width: number;
+    private static height: number;
+    private static timingMove = 0;
 
     constructor(scene: any, x: number, y: number, spriteSheet: any, id: string) {
         super(scene, x, y, spriteSheet);
 
         this.id = id;
-        this.mainScene = scene;
-        this.canvas = this.mainScene.sys.canvas;
+        Enemy.width = this.width;
+        Enemy.height = this.height;
 
         this.scene.physics.world.enable(this);
         this.scene.add.existing(this);
     }
 
-    getId(){
+    getId() {
         return this.id;
     }
 
-    getCoordinates(){
+    getCoordinates() {
         const x = this.getId().split(";")[0];
         const y = this.getId().split(";")[1];
 
         return [x, y]
     }
 
-    initTweenMoves(){
-        this.tweenMoves = this.scene.tweens.add({
-            targets: this,
-            x: this.x + 100,
-            ease: 'Linear',
-            duration: this.speed,
-            yoyo: true,
-            repeat: -1
-        })
-    }
+    static updatePosition(time: integer, direction: integer, scene: any, canvas: any) {
+        let firstEnemy = scene.getEnemiesAreaRange()[2];
+        let lastEnemy = scene.getEnemiesAreaRange()[3];
 
-    updatePosition() {
-        let a = this.mainScene.getEnemiesAreaRange()[0];
-        let b = this.mainScene.getEnemiesAreaRange()[1];
-        let area = b - a;
-
-        let lastEnemy;
-
-        for(let i = 0; i < this.mainScene.enemies.getChildren().length; i++){
-            if(i == b && this.mainScene.enemies.get(i) != null)
-                lastEnemy = this.mainScene.enemies.get(i);
-        }
-
-        if(1){
-            if(lastEnemy.x < this.canvas.width - (area * this.width)){
-                this.x += 10;
+        if (this.timingMove < time) {
+            if (direction) {
+                if (lastEnemy.x <= canvas.width - (Enemy.width * 2)) {
+                    // @ts-ignore
+                    scene.enemies.getChildren().forEach(enemy => enemy.x += 10);
+                } else {
+                    // @ts-ignore
+                    scene.enemies.getChildren().forEach(enemy => enemy.y += 15);
+                    scene.setEnemiesDirection(0);
+                }
+            } else {
+                if (firstEnemy.x > (this.width * 2)) {
+                    // @ts-ignore
+                    scene.enemies.getChildren().forEach(enemy => enemy.x -= 10);
+                } else {
+                    // @ts-ignore
+                    scene.enemies.getChildren().forEach(enemy => enemy.y += 15);
+                    scene.setEnemiesDirection(1);
+                }
             }
+
+            Enemy.timingMove = time + 666;
         }
     }
 }
