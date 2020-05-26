@@ -62,6 +62,8 @@ export class Player extends Phaser.GameObjects.Image {
             const shot = new Shot(this.scene, this.x, this.y, 'shotTest');
             this.bulletsAlive.add(shot);
 
+            this.mainScene.sound.play('playerShoot')
+
             this.mainScene.checkCollision(shot);
         }
         if (this.bulletsAlive.getLength() > 0)

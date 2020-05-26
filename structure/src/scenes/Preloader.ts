@@ -15,4 +15,8 @@ export class Preloader extends Phaser.Scene {
     init() {
         this.scene.start('main');
     }
+
+    preload(){
+        this.load.audio("playerShoot", "./assets/audio/shoot.wav");
+    }
 }

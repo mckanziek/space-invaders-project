@@ -42,6 +42,8 @@ export class Enemy extends Phaser.GameObjects.Image {
         let firstEnemy = scene.getEnemiesAreaRange()[0];
         let lastEnemy = scene.getEnemiesAreaRange()[1];
 
+        console.log(firstEnemy + " " + lastEnemy)
+
         if (this.timingMove < time) {
             if (Enemy.direction) {
                 if (lastEnemy.x <= canvas.width - (Enemy.width * 2)) {

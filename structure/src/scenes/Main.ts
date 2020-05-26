@@ -5,12 +5,11 @@ export class Main extends Phaser.Scene {
     private key: any;
 
     private player: Player | any;
+    private test: any;
 
     private enemiesMarginGrid: number = 50;
     private enemiesReferGrid: Array<number[]> = [];
-
     private enemies: Phaser.GameObjects.Group | any;
-    private enemiesDirection = 1;
 
     constructor() {
         super("main");
@@ -63,8 +62,6 @@ export class Main extends Phaser.Scene {
         });
 
         this.enemiesReferGrid = grid;
-
-        console.log(this.getEnemiesAreaRange()[2].getId() + " " + this.getEnemiesAreaRange()[1].getId() + " | " + this.getEnemiesAreaRange()[0].getId())
     }
 
     getEnemiesAreaRange() {
@@ -109,14 +106,5 @@ export class Main extends Phaser.Scene {
         }
 
         return bottonEnemies
-    }
-
-    setEnemiesDirection(direction: integer) {
-        this.enemiesDirection = direction;
-    }
-
-    goDownEnemy(c: number) {
-        // @ts-ignore
-        this.enemies.getChildren().forEach(enemy => enemy.y = c);
     }
 }
