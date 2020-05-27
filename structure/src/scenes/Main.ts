@@ -6,6 +6,7 @@ export class Main extends Phaser.Scene {
 
     private player: Player | any;
 
+    private enemiesPoints = [30, 20, 20, 10, 10];
     private enemiesMarginGrid: number = 50;
     private enemiesReferGrid: Array<number[]> = [];
     private enemies: Phaser.GameObjects.Group | any;
@@ -16,12 +17,11 @@ export class Main extends Phaser.Scene {
 
     init() {
         this.key = this.input.keyboard.createCursorKeys();
+        this.enemies = this.add.group({runChildUpdate: true});
     }
 
     create() {
         this.player = new Player(this, 'shipTest', this.key);
-
-        this.enemies = this.add.group({runChildUpdate: true});
 
         for (let i = 0; i < 5; i++) {
             const row = [];
@@ -30,7 +30,8 @@ export class Main extends Phaser.Scene {
                     (60 + (j * this.enemiesMarginGrid)),
                     (60 + (i * this.enemiesMarginGrid)),
                     '',
-                    j + ";" + i
+                    j + ";" + i,
+                    this.enemiesPoints[i]
                 ));
 
                 row.push(1);

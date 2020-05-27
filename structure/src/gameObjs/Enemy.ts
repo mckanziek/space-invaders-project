@@ -1,5 +1,6 @@
 export class Enemy extends Phaser.GameObjects.Image {
     private readonly id: string;
+    private point: integer;
     private customY: number; //Serve per tenere traccia della vera Y dell'oggetto
 
     private static mainScene: any;
@@ -11,10 +12,12 @@ export class Enemy extends Phaser.GameObjects.Image {
     private static speed = 10;
     private static timingMove = 0;
 
-    constructor(scene: any, x: number, y: number, spriteSheet: any, id: string) {
+    constructor(scene: any, x: number, y: number, spriteSheet: any, id: string, point: integer) {
         super(scene, x, y, spriteSheet);
 
         this.id = id;
+        this.point = point;
+
         Enemy.width = this.width;
         Enemy.height = this.height;
 
@@ -71,7 +74,7 @@ export class Enemy extends Phaser.GameObjects.Image {
 
     die() {
         Enemy.mainScene.sound.play("enemyKilled");
-        Enemy.mainScene.events.emit('incrementScore', 10);
+        Enemy.mainScene.events.emit('incrementScore', this.point);
 
         this.setActive(false);
         this.setVisible(false);
