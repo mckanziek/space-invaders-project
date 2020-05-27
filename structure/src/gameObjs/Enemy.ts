@@ -2,7 +2,7 @@ export class Enemy extends Phaser.GameObjects.Image {
     private readonly id: string;
     private customY: number; //Serve per tenere traccia della vera Y dell'oggetto
 
-    private static scene: any;
+    private static mainScene: any;
     private static canvas: any;
 
     private static width: number;
@@ -18,7 +18,7 @@ export class Enemy extends Phaser.GameObjects.Image {
         Enemy.width = this.width;
         Enemy.height = this.height;
 
-        Enemy.scene = scene;
+        Enemy.mainScene = scene;
         Enemy.canvas = scene.sys.canvas
 
         this.customY = this.y;
@@ -38,34 +38,30 @@ export class Enemy extends Phaser.GameObjects.Image {
     }
 
     static updatePosition(time: integer) {
-        let firstEnemy = Enemy.scene.getEnemiesAreaRange()[0];
-        let lastEnemy = Enemy.scene.getEnemiesAreaRange()[1];
+        let firstEnemy = Enemy.mainScene.getEnemiesAreaRange()[0];
+        let lastEnemy = Enemy.mainScene.getEnemiesAreaRange()[1];
 
         if (this.timingMove < time) {
             // @ts-ignore
-            Enemy.scene.enemies.getChildren().forEach(enemy => enemy.x += Enemy.speed);
+            Enemy.mainScene.enemies.getChildren().forEach(enemy => enemy.x += Enemy.speed);
 
-            if (!(lastEnemy.x <= Enemy.canvas.width - (Enemy.width * 2))) {
-                Enemy.speed = -30;
+            if (!(lastEnemy.x <= Enemy.canvas.width - (Enemy.width * 2))
+                || !(firstEnemy.x > (this.width * 2))) {
+                Enemy.speed *= -1;
                 Enemy.goDown();
             }
 
-            if (!(firstEnemy.x > (this.width * 2))) {
-                Enemy.speed = 30;
-                Enemy.goDown();
-            }
-
-            Enemy.timingMove = time + 320;
+            Enemy.timingMove = time + 369;
         }
     }
 
     static goDown() {
-        let bottonEnemy = Enemy.scene.getEnemiesAreaRange()[2];
+        let bottonEnemy = Enemy.mainScene.getEnemiesAreaRange()[2];
 
         if (bottonEnemy.customY < Enemy.canvas.height - (Enemy.height * 2)) {
             setTimeout(function () {
                 // @ts-ignore
-                Enemy.scene.enemies.getChildren().forEach(enemy => {
+                Enemy.mainScene.enemies.getChildren().forEach(enemy => {
                     enemy.customY += 15;
                     enemy.y = enemy.customY;
                 });
@@ -73,8 +69,10 @@ export class Enemy extends Phaser.GameObjects.Image {
         }
     }
 
-    die(){
-        Enemy.scene.sound.play("enemyKilled");
+    die() {
+        Enemy.mainScene.sound.play("enemyKilled");
+        Enemy.mainScene.events.emit('incrementScore', 10);
+
         this.setActive(false);
         this.setVisible(false);
     }

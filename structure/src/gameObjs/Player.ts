@@ -34,10 +34,10 @@ export class Player extends Phaser.GameObjects.Image {
         this.scene.add.existing(this);
         this.setScale(this.scale);
 
-        this.setHealt();
+        //this.setHealt();
     }
 
-    setHealt() {
+    /*setHealt() {
         for (let i = 0; i < 3; i++) {
             let healthObj = this.scene.add.image(0, 0, 'healthTest');
             let scale = 25 / healthObj.width;
@@ -48,7 +48,7 @@ export class Player extends Phaser.GameObjects.Image {
 
             this.health.add(healthObj);
         }
-    }
+    }*/
 
     decraseHealt() {
         this.health.getChildren()[this.health.getChildren().length - 1].destroy();

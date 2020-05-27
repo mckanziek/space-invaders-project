@@ -1,6 +1,7 @@
 import "phaser";
 import {Preloader} from './scenes/Preloader';
 import {Main} from './scenes/Main';
+import {GameHud} from './scenes/GameHud';
 
 const config: GameConfig = {
     type: Phaser.AUTO, //Setta automaticamente il motore per il renderizzato
@@ -17,6 +18,7 @@ const config: GameConfig = {
     scene: [
         Preloader,
         Main,
+        GameHud
     ]
 };
 
