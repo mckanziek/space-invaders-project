@@ -5,7 +5,6 @@ export class Main extends Phaser.Scene {
     private key: any;
 
     private player: Player | any;
-    private test: any;
 
     private enemiesMarginGrid: number = 50;
     private enemiesReferGrid: Array<number[]> = [];
@@ -23,6 +22,7 @@ export class Main extends Phaser.Scene {
         this.player = new Player(this, 'shipTest', this.key);
 
         this.enemies = this.add.group({runChildUpdate: true});
+
         for (let i = 0; i < 5; i++) {
             const row = [];
             for (let j = 0; j < 11; j++) {
@@ -40,9 +40,9 @@ export class Main extends Phaser.Scene {
     }
 
     update(time: integer) {
-        this.player.move();
+        this.player.move(time);
 
-        Enemy.updatePosition(time, this, this.sys.canvas);
+        Enemy.updatePosition(time);
     }
 
     checkCollision(shot: any) {
@@ -53,15 +53,15 @@ export class Main extends Phaser.Scene {
                 this.physics.add.collider(shot, enemy, function () {
                     grid[Number(enemy.getCoordinates()[1])][Number(enemy.getCoordinates()[0])] = 0;
 
-                    enemy.setActive(false);
-                    enemy.setVisible(false);
-
+                    enemy.die();
                     shot.destroy();
                 });
             }
         });
 
         this.enemiesReferGrid = grid;
+
+        console.log(this.getEnemiesAreaRange())
     }
 
     getEnemiesAreaRange() {
@@ -92,7 +92,22 @@ export class Main extends Phaser.Scene {
             }
         }
 
-        return [firstEnemy, lastEnemy, bottonEnemy];
+        return this.correctEnemiesRefer([firstEnemy, lastEnemy, bottonEnemy]);
+    }
+
+    correctEnemiesRefer(refers: any){
+        let correction = [];
+
+        if(refers[0] == undefined)
+            correction[0] = correction[1] = refers[1];
+        else if(refers[1] == undefined)
+            correction[0] = correction[1] = refers[0];
+        else
+            correction = refers
+
+        if(refers[2] == undefined) correction[2] = correction[0];
+
+        return correction;
     }
 
     getEnemiesShooting() {

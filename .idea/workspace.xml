@@ -16,10 +16,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Enemies moves &amp; limit (Down)">
+    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Player audio shoot">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/game.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/game.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/GameInit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/GameInit.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Player.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/scenes/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Main.ts" afterDir="false" />
@@ -85,7 +84,7 @@
       <workItem from="1589626914335" duration="1443000" />
       <workItem from="1589791525657" duration="690000" />
       <workItem from="1590354490784" duration="8443000" />
-      <workItem from="1590432675321" duration="47682000" />
+      <workItem from="1590432675321" duration="60048000" />
     </task>
     <task id="LOCAL-00001" summary="commit test">
       <created>1586871199927</created>
@@ -129,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590532327576</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Player audio shoot">
+      <created>1590536071923</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1590536071923</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +185,8 @@
     <MESSAGE value="Enemies moves" />
     <MESSAGE value="Enemies moves (Left, Right, Down)" />
     <MESSAGE value="Enemies moves &amp; limit (Down)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enemies moves &amp; limit (Down)" />
+    <MESSAGE value="Player audio shoot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Player audio shoot" />
   </component>
   <component name="WindowStateProjectService">
     <state x="26" y="99" width="890" height="915" key="CommitChangelistDialog2" timestamp="1586871182655">
@@ -200,10 +207,11 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="165" y="188" key="SettingsEditor/0.27.1920.1053/0.27.1920.1053@0.27.1920.1053" timestamp="1590355772409" />
-    <state x="75" y="289" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1587639909746">
+    <state x="426" y="245" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1590536109073">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="75" y="289" width="800" height="527" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1587639909746" />
+    <state x="426" y="245" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590536109073" />
     <state x="174" y="236" width="601" height="633" key="git4idea.branch.GitSmartOperationDialog" timestamp="1590431945882">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -221,10 +229,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="0" y="144" width="1347" height="817" key="new project wizard/0.27.1920.1053@0.27.1920.1053" timestamp="1587857666326" />
-    <state x="623" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1590529465683">
+    <state x="623" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1590591602729">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="623" y="217" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/0.27.1920.1053@0.27.1920.1053" timestamp="1590364307211" />
-    <state x="623" y="217" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590529465683" />
+    <state x="623" y="217" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590591602729" />
   </component>
 </project>

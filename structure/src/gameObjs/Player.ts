@@ -9,6 +9,8 @@ export class Player extends Phaser.GameObjects.Image {
 
     private readonly scale: any;
     private health: Phaser.GameObjects.Group = this.scene.add.group();
+
+    private shootTiming = 0;
     private bulletsAlive: Phaser.GameObjects.Group = this.scene.add.group();
 
     constructor(scene: any, spriteSheet: any, inputKey: any) {
@@ -53,18 +55,18 @@ export class Player extends Phaser.GameObjects.Image {
         console.log(this.x + " " + this.width)
     }
 
-    move() {
+    move(time: integer) {
         if (this.inputKey.left.isDown && this.x > (this.width * this.scale) / 2)
             this.x += -5;
         if (this.inputKey.right.isDown && this.x < (this.canvas.width - (this.width * this.scale) / 2))
             this.x += 5;
-        if (this.inputKey.space.isDown && this.bulletsAlive.getLength() < 1) {
+        if (this.inputKey.space.isDown && this.bulletsAlive.getLength() < 1 && this.shootTiming < time) {
             const shot = new Shot(this.scene, this.x, this.y, 'shotTest');
             this.bulletsAlive.add(shot);
-
-            this.mainScene.sound.play('playerShoot')
-
             this.mainScene.checkCollision(shot);
+
+            this.mainScene.sound.play('playerShoot');
+            this.shootTiming = time + 320;
         }
         if (this.bulletsAlive.getLength() > 0)
             this.bulletsAlive.getChildren()[0].update();
