@@ -6,8 +6,8 @@ import {GameHud} from './scenes/GameHud';
 const config: GameConfig = {
     type: Phaser.AUTO, //Setta automaticamente il motore per il renderizzato
     parent: "canvas",
-    width: 720,
-    height: 560,
+    width: 777,
+    height: 666,
     physics: {
         default: "arcade",
         arcade: {

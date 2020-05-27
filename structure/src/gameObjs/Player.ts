@@ -8,7 +8,6 @@ export class Player extends Phaser.GameObjects.Image {
     private customKeys: any = {};
 
     private readonly scale: any;
-    private health: Phaser.GameObjects.Group = this.scene.add.group();
 
     private shootTiming = 0;
     private bulletsAlive: Phaser.GameObjects.Group = this.scene.add.group();
@@ -33,26 +32,6 @@ export class Player extends Phaser.GameObjects.Image {
         this.scene.physics.world.enable(this);
         this.scene.add.existing(this);
         this.setScale(this.scale);
-
-        //this.setHealt();
-    }
-
-    /*setHealt() {
-        for (let i = 0; i < 3; i++) {
-            let healthObj = this.scene.add.image(0, 0, 'healthTest');
-            let scale = 25 / healthObj.width;
-
-            healthObj.setScale(scale);
-            healthObj.x = (this.canvas.width - (this.width * 0.05)) - (i * (healthObj.width * scale));
-            healthObj.y = (healthObj.height * scale);
-
-            this.health.add(healthObj);
-        }
-    }*/
-
-    decraseHealt() {
-        this.health.getChildren()[this.health.getChildren().length - 1].destroy();
-        console.log(this.x + " " + this.width)
     }
 
     move(time: integer) {
@@ -61,16 +40,16 @@ export class Player extends Phaser.GameObjects.Image {
         if (this.inputKey.right.isDown && this.x < (this.canvas.width - (this.width * this.scale) / 2))
             this.x += 5;
         if (this.inputKey.space.isDown && this.bulletsAlive.getLength() < 1 && this.shootTiming < time) {
-            const shot = new Shot(this.scene, this.x, this.y, 'shotTest');
+            const shot = new Shot(this.scene, this.x, this.y, -450, 'shotTest');
             this.bulletsAlive.add(shot);
-            this.mainScene.checkCollision(shot);
+            this.mainScene.checkCollisionShotPlayer(shot);
 
             this.mainScene.sound.play('playerShoot');
-            this.shootTiming = time + 320;
+            this.shootTiming = time + 450;
         }
         if (this.bulletsAlive.getLength() > 0)
             this.bulletsAlive.getChildren()[0].update();
 
-        if (this.customKeys.D.isDown) this.decraseHealt();
+        if (this.customKeys.D.isDown) this.mainScene.events.emit('decraseHealth');
     }
 }

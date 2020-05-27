@@ -7,6 +7,8 @@ export class Main extends Phaser.Scene {
     private player: Player | any;
 
     private enemiesPoints = [30, 20, 20, 10, 10];
+    private enemiesShootTiming = 0;
+    private enemiesShootDelay = 1666;
     private enemiesMarginGrid: number = 50;
     private enemiesReferGrid: Array<number[]> = [];
     private enemies: Phaser.GameObjects.Group | any;
@@ -44,18 +46,28 @@ export class Main extends Phaser.Scene {
         this.player.move(time);
 
         Enemy.updatePosition(time);
+
+        if (this.enemiesShootTiming < time) {
+            let enemies = this.getEnemiesShooting();
+            let randomIndex = Math.floor(Math.random() * enemies.length);
+            let randomEnemy = enemies[randomIndex];
+
+            randomEnemy.shoot();
+
+            this.enemiesShootTiming = time + this.enemiesShootDelay;
+        }
     }
 
-    checkCollision(shot: any) {
+    checkCollisionShotPlayer(playerShot: any) {
         let grid = this.enemiesReferGrid;
 
         this.enemies.getChildren().forEach((enemy: Enemy) => {
-            if(enemy.active){
-                this.physics.add.collider(shot, enemy, function () {
+            if (enemy.active) {
+                this.physics.add.overlap(playerShot, enemy, function () {
                     grid[Number(enemy.getCoordinates()[1])][Number(enemy.getCoordinates()[0])] = 0;
 
                     enemy.die();
-                    shot.destroy();
+                    playerShot.destroy();
                 });
             }
         });
@@ -63,6 +75,15 @@ export class Main extends Phaser.Scene {
         this.enemiesReferGrid = grid;
 
         console.log(this.getEnemiesAreaRange())
+    }
+
+    checkcollisionShotEnemy(enemyShot: any){
+        let player  = this.player;
+
+        this.physics.add.overlap(enemyShot, player, function () {
+            player.mainScene.events.emit('decraseHealth');
+            enemyShot.destroy();
+        });
     }
 
     getEnemiesAreaRange() {
@@ -96,17 +117,17 @@ export class Main extends Phaser.Scene {
         return this.correctEnemiesRefer([firstEnemy, lastEnemy, bottonEnemy]);
     }
 
-    correctEnemiesRefer(refers: any){
+    correctEnemiesRefer(refers: any) {
         let correction = [];
 
-        if(refers[0] == undefined)
+        if (refers[0] == undefined)
             correction[0] = correction[1] = refers[1];
-        else if(refers[1] == undefined)
+        else if (refers[1] == undefined)
             correction[0] = correction[1] = refers[0];
         else
             correction = refers
 
-        if(refers[2] == undefined) correction[2] = correction[0];
+        if (refers[2] == undefined) correction[2] = correction[0];
 
         return correction;
     }
@@ -117,10 +138,14 @@ export class Main extends Phaser.Scene {
         for (let i = 0; i < 5; i++) {
             for (let j = 0; j < 11; j++) {
                 if (this.enemiesReferGrid[i][j])
-                    bottonEnemies[j] = this.enemies.getChildren()[((i * 11) + j)].getCoordinates()
+                    bottonEnemies[j] = this.enemies.getChildren()[((i * 11) + j)]
             }
         }
 
         return bottonEnemies
+    }
+
+    decraseEnemiesShootDelay() {
+        this.enemiesShootDelay -= (this.enemiesShootDelay - 50 < 1500) ? 50 : 0;
     }
 }

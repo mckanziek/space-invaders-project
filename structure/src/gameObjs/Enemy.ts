@@ -1,6 +1,8 @@
+import {Shot} from "./Shot";
+
 export class Enemy extends Phaser.GameObjects.Image {
     private readonly id: string;
-    private point: integer;
+    private readonly point: integer;
     private customY: number; //Serve per tenere traccia della vera Y dell'oggetto
 
     private static mainScene: any;
@@ -11,6 +13,9 @@ export class Enemy extends Phaser.GameObjects.Image {
 
     private static speed = 10;
     private static timingMove = 0;
+    private static enemyMovedelay = 420;
+
+    private bulletsAlive: Phaser.GameObjects.Group = this.scene.add.group();
 
     constructor(scene: any, x: number, y: number, spriteSheet: any, id: string, point: integer) {
         super(scene, x, y, spriteSheet);
@@ -40,6 +45,16 @@ export class Enemy extends Phaser.GameObjects.Image {
         return [x, y];
     }
 
+    public incrementSpeed(){
+        let speedSign = (Enemy.speed < 0) ? -1 : 1;
+        let newSpeed = this.point / 10;
+
+        if(Math.abs(Enemy.speed + newSpeed * speedSign) < 25){
+            Enemy.speed += newSpeed * speedSign;
+            Enemy.enemyMovedelay -= this.point;
+        }
+    }
+
     static updatePosition(time: integer) {
         let firstEnemy = Enemy.mainScene.getEnemiesAreaRange()[0];
         let lastEnemy = Enemy.mainScene.getEnemiesAreaRange()[1];
@@ -54,7 +69,7 @@ export class Enemy extends Phaser.GameObjects.Image {
                 Enemy.goDown();
             }
 
-            Enemy.timingMove = time + 369;
+            Enemy.timingMove = time + Enemy.enemyMovedelay;
         }
     }
 
@@ -72,9 +87,21 @@ export class Enemy extends Phaser.GameObjects.Image {
         }
     }
 
+    shoot(){
+        let shot = new Shot(Enemy.mainScene, this.x, this.y, 450, 'shotTest');
+        this.bulletsAlive.add(shot);
+        Enemy.mainScene.checkcollisionShotEnemy(shot);
+
+        if (this.bulletsAlive.getLength() > 0)
+            this.bulletsAlive.getChildren()[0].update();
+    }
+
     die() {
+        this.incrementSpeed();
+
         Enemy.mainScene.sound.play("enemyKilled");
         Enemy.mainScene.events.emit('incrementScore', this.point);
+        Enemy.mainScene.decraseEnemiesShootDelay();
 
         this.setActive(false);
         this.setVisible(false);

@@ -1,5 +1,5 @@
 export class Shot extends Phaser.GameObjects.Image {
-    constructor(scene: any, x: integer, y: integer, spritesheet: any) {
+    constructor(scene: any, x: integer, y: integer, speed: integer, spritesheet: any) {
         super(scene, x, y, spritesheet);
 
         this.scene.physics.world.enable(this);
@@ -8,12 +8,12 @@ export class Shot extends Phaser.GameObjects.Image {
         this.setScale(0.05);
         this.setDepth(-1);
 
-        this.initMovement();
+        this.initMovement(speed);
     }
 
-    private initMovement(): void {
+    private initMovement(speed: integer): void {
         this.scene.physics.world.enable(this);
-        (this.body as Phaser.Physics.Arcade.Body).setVelocityY(-400);
+        (this.body as Phaser.Physics.Arcade.Body).setVelocityY(speed);
     }
 
     update(){
