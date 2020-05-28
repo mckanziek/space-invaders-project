@@ -11,7 +11,6 @@ export class GameHud extends Phaser.Scene {
     init(){
         this.mainScene = this.scene.get('main');
         this.playerHealth = this.add.group();
-        this.initPlayerHealth();
     }
 
     create() {
@@ -30,6 +29,8 @@ export class GameHud extends Phaser.Scene {
     }
 
     initPlayerHealth(){
+        this.playerHealth = this.add.group();
+
         for(let i = 1; i <= 3; i++){
             let healthObj = this.add.image(0, 0, 'healthTest');
             let scale = 25 / healthObj.width;

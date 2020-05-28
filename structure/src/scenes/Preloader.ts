@@ -12,9 +12,14 @@ export class Preloader extends Phaser.Scene {
         });
     }
 
-    init() {
+    init(){
         this.scene.start('main');
+        this.scene.pause('main');
+
+        this.scene.launch('menu');
         this.scene.launch('gameHud');
+
+        this.scene.moveAbove('gameHud', 'menu');
     }
 
     preload(){

@@ -1,6 +1,7 @@
 import "phaser";
 import {Preloader} from './scenes/Preloader';
 import {Main} from './scenes/Main';
+import {Menu} from './scenes/Menu'
 import {GameHud} from './scenes/GameHud';
 import {Lose} from './scenes/Lose';
 
@@ -16,12 +17,7 @@ const config: GameConfig = {
             debug: false
         }
     },
-    scene: [
-        Preloader,
-        Main,
-        GameHud,
-        Lose
-    ]
+    scene: [Preloader, Main, Menu, GameHud, Lose]
 };
 
 window.addEventListener('load', ()=>{

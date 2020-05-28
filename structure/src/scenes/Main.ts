@@ -152,8 +152,4 @@ export class Main extends Phaser.Scene {
     decraseEnemiesShootDelay() {
         this.enemiesShootDelay -= (this.enemiesShootDelay - 50 < 1500) ? 50 : 0;
     }
-
-    restart(){
-        this.scene.restart();
-    }
 }

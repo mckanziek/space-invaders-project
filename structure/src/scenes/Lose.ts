@@ -22,16 +22,15 @@ export class Lose extends Phaser.Scene {
     create() {
         let score = (this.scene.get('gameHud') as GameHud).getScore()
 
-
-        this.messageLabel = this.add.text(this.sys.canvas.width / 2, this.sys.canvas.height / 10 * 4, "Hai perso bitch",
+        this.messageLabel = this.add.text(this.sys.canvas.width / 2, this.sys.canvas.height / 10 * 3.6, "Hai perso bitch",
             {font: '77px arc-font', fill: '#ff0000'}
         ).setOrigin(0.5);
 
-        this.scoreLabel = this.add.text(this.sys.canvas.width / 2, this.sys.canvas.height / 10 * 4.8, "Punteggio: " + score,
+        this.scoreLabel = this.add.text(this.sys.canvas.width / 2, this.sys.canvas.height / 10 * 4.4, "Punteggio: " + score,
             {font: '55px arc-font', fill: '#ff0000'}
         ).setOrigin(0.5);
 
-        this.buttonRestart = this.add.text(this.sys.canvas.width / 2, this.sys.canvas.height / 10 * 6.2, "Nuova partita",
+        this.buttonRestart = this.add.text(this.sys.canvas.width / 2, this.sys.canvas.height / 10 * 5.8, "Nuova partita",
             {font: '44px arc-font', fill: '#dbba16'}
         ).setOrigin(0.5)
             .setInteractive()
@@ -44,10 +43,10 @@ export class Lose extends Phaser.Scene {
                 this.scene.stop('loseScreen');
 
                 (this.scene.get('gameHud') as GameHud).initPlayerHealth();
-                (this.scene.get('main') as Main).restart();
+                (this.scene.get('main') as Main).scene.restart();
             });
 
-        this.buttonMenu = this.add.text(this.sys.canvas.width / 2, this.sys.canvas.height / 10 * 7, "Menu",
+        this.buttonMenu = this.add.text(this.sys.canvas.width / 2, this.sys.canvas.height / 10 * 6.6, "Menu",
             {font: '44px arc-font', fill: '#dbba16'}
         ).setOrigin(0.5)
             .setInteractive()
@@ -56,7 +55,10 @@ export class Lose extends Phaser.Scene {
             .on('pointerdown', ()=> this.buttonMenu.setFont('38px arc-font'))
             .on('pointerup', () => {
                 this.buttonMenu.setFont('44px arc-font');
-                //this.scene.start('main');
+
+                this.scene.stop('loseScreen');
+
+                this.scene.start('menu');
             });
     }
 
