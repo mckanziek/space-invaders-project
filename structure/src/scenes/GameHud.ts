@@ -1,11 +1,12 @@
-import {Main} from "./Main";
-
 export class GameHud extends Phaser.Scene {
     private mainScene: any;
+    private gameMode: integer = 0;
 
     private score = 0;
+    private scoreHistory: Array<integer> = [];
     private playerHealth: Phaser.GameObjects.Group | any;
 
+    private scoreLabel: any;
     private pauseBotton: any;
 
     constructor() {
@@ -18,7 +19,7 @@ export class GameHud extends Phaser.Scene {
     }
 
     create() {
-        let scoreLabel = this.add.text(15, 15, "Punteggio 0",
+        this.scoreLabel = this.add.text(15, 15, "Punteggio 0",
             {font: '40px arc-font', fill: '#fff'}
         );
 
@@ -41,17 +42,23 @@ export class GameHud extends Phaser.Scene {
             // @ts-ignore
             this.score += points;
             // @ts-ignore
-            scoreLabel.setText("Punteggio " + this.score);
+            this.scoreLabel.setText("Punteggio " + this.score);
         }, this);
 
         this.mainScene.events.on('decraseHealth', this.decrasePlayerHealth, this);
     }
 
-    initPlayerHealth(){
-        this.playerHealth = this.add.group();
+    initPlayerHealth(gameMode: integer){
+        this.gameMode = gameMode;
+
+        // @ts-ignore
+        this.playerHealth.getChildren().forEach(health => health.destroy());
+        // @ts-ignore
+        this.playerHealth.getChildren().forEach(health => health.destroy());
+
 
         for(let i = 1; i <= 3; i++){
-            let healthObj = this.add.image(0, 0, 'healthTest');
+            let healthObj = this.add.image(0, 0, 'playerHealthSprt' + gameMode);
             let scale = 25 / healthObj.width;
 
             healthObj.setScale(scale);
@@ -60,6 +67,11 @@ export class GameHud extends Phaser.Scene {
 
             this.playerHealth.add(healthObj);
         }
+
+        this.scoreHistory.push(this.score);
+        this.score = 0;
+
+        this.scoreLabel.setText("Punteggio 0");
     }
 
     decrasePlayerHealth(){
@@ -73,5 +85,13 @@ export class GameHud extends Phaser.Scene {
 
     getScore(){
         return this.score;
+    }
+
+    getScoreHistory(){
+        return this.scoreHistory;
+    }
+
+    getGameMode(){
+        return this.gameMode;
     }
 }

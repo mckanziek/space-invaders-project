@@ -5,7 +5,9 @@ export class Shot extends Phaser.GameObjects.Image {
         this.scene.physics.world.enable(this);
         this.scene.add.existing(this);
 
-        this.setScale(0.05);
+        let scale = 10 / this.width;
+
+        this.setScale(scale);
         this.setDepth(-1);
 
         this.initMovement(speed);

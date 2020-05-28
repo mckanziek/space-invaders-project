@@ -2,6 +2,7 @@ import {Player} from '../gameObjs/Player';
 import {Enemy} from '../gameObjs/Enemy';
 
 export class Main extends Phaser.Scene {
+    private gameMode: integer = 0;
     private key: any;
 
     private player: Player | any;
@@ -17,13 +18,16 @@ export class Main extends Phaser.Scene {
         super("main");
     }
 
-    init() {
+    init(data: any) {
+        this.registry.set("gameMode", data.gameMode);
+        this.gameMode = data.gameMode;
+
         this.key = this.input.keyboard.createCursorKeys();
         this.enemies = this.add.group({runChildUpdate: true});
     }
 
     create() {
-        this.player = new Player(this, 'shipTest', this.key);
+        this.player = new Player(this, 'playerSprt' + this.gameMode, this.key);
 
         this.enemiesReferGrid = [];
         this.enemiesShootDelay = 1666;

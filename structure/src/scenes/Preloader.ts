@@ -4,16 +4,20 @@ export class Preloader extends Phaser.Scene {
             key: 'preloader',
             pack: {
                 files: [
-                    {type: 'image', key: 'shipTest', url: './assets/spritesheets/shipTest.png'},
-                    {type: 'image', key: 'shotTest', url: './assets/spritesheets/shotTest.png'},
-                    {type: 'image', key: 'healthTest', url: './assets/spritesheets/healthTest.png'},
+                    {type: 'image', key: 'playerSprt0', url: './assets/spritesheets/shipTest.png'},
+                    {type: 'image', key: 'playerSprt1', url: './assets/spritesheets/doggo.png'},
+                    {type: 'image', key: 'playerHealthSprt0', url: './assets/spritesheets/healthTest.png'},
+                    {type: 'image', key: 'playerHealthSprt1', url: './assets/spritesheets/meal.png'},
+                    {type: 'image', key: 'shotSprt0', url: './assets/spritesheets/shotTest.png'},
+                    {type: 'image', key: 'shotSprt1', url: './assets/spritesheets/potato.png'},
+
                 ]
             }
         });
     }
 
     init(){
-        this.scene.start('main');
+        this.scene.start('main', {gameMode: 0});
         this.scene.pause('main');
 
         this.scene.launch('menu');

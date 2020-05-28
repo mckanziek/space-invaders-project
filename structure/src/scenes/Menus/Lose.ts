@@ -20,7 +20,8 @@ export class Lose extends Phaser.Scene {
     }
 
     create() {
-        let score = (this.scene.get('gameHud') as GameHud).getScore()
+        let gameMode = (this.scene.get('gameHud') as GameHud).getGameMode();
+        let score = (this.scene.get('gameHud') as GameHud).getScore();
 
         this.messageLabel = this.add.text(this.sys.canvas.width / 2, this.sys.canvas.height / 10 * 3.6, "Hai perso bitch",
             {font: '77px arc-font', fill: '#ff0000'}
@@ -42,7 +43,7 @@ export class Lose extends Phaser.Scene {
 
                 this.scene.stop('loseScreen');
 
-                (this.scene.get('gameHud') as GameHud).initPlayerHealth();
+                (this.scene.get('gameHud') as GameHud).initPlayerHealth(gameMode);
                 (this.scene.get('main') as Main).scene.restart();
             });
 

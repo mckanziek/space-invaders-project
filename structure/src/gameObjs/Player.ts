@@ -1,4 +1,5 @@
 import {Shot} from "./Shot";
+import {Main} from "../scenes/Main";
 
 export class Player extends Phaser.GameObjects.Image {
     private mainScene: any;
@@ -40,7 +41,9 @@ export class Player extends Phaser.GameObjects.Image {
         if (this.inputKey.right.isDown && this.x < (this.canvas.width - (this.width * this.scale) / 2))
             this.x += 5;
         if (this.inputKey.space.isDown && this.bulletsAlive.getLength() < 1 && this.shootTiming < time) {
-            const shot = new Shot(this.scene, this.x, this.y, -450, 'shotTest');
+            let gameMode = this.mainScene.registry.get("gameMode");
+
+            const shot = new Shot(this.scene, this.x, this.y, -450, 'shotSprt' + gameMode);
             this.bulletsAlive.add(shot);
             this.mainScene.checkCollisionShotPlayer(shot);
 

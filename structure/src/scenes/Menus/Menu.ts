@@ -7,7 +7,8 @@ export class Menu extends Phaser.Scene {
     private titleLabel: any;
     private descriptionLabel: any;
 
-    private buttonStart: any;
+    private buttonStartNormal: any;
+    private buttonStartWeird: any;
     private buttonScore: any;
 
     constructor() {
@@ -29,23 +30,39 @@ export class Menu extends Phaser.Scene {
         ).setOrigin(0.5);
 
 
-        this.buttonStart = this.add.text(this.sys.canvas.width / 2, this.sys.canvas.height / 10 * 5.8, "Gioca",
+        this.buttonStartNormal = this.add.text(this.sys.canvas.width / 2, this.sys.canvas.height / 10 * 5.8, "Modalità normale",
             {font: '44px arc-font', fill: '#dbba16'}
         ).setOrigin(0.5)
             .setInteractive()
-            .on('pointerover', () => this.buttonStart.setColor('#30db16'))
-            .on('pointerout', () => this.buttonStart.setColor('#dbba16'))
-            .on('pointerdown', () => this.buttonStart.setFont('38px arc-font'))
+            .on('pointerover', () => this.buttonStartNormal.setColor('#30db16'))
+            .on('pointerout', () => this.buttonStartNormal.setColor('#dbba16'))
+            .on('pointerdown', () => this.buttonStartNormal.setFont('38px arc-font'))
             .on('pointerup', () => {
-                this.buttonStart.setFont('44px arc-font');
+                this.buttonStartNormal.setFont('44px arc-font');
 
                 this.scene.stop('menu');
 
-                (this.scene.get('gameHud') as GameHud).initPlayerHealth();
-                (this.scene.get('main') as Main).scene.restart();
+                (this.scene.get('main') as Main).scene.restart({gameMode: 0});
+                (this.scene.get('gameHud') as GameHud).initPlayerHealth(0);
             });
 
-        this.buttonScore = this.add.text(this.sys.canvas.width / 2, this.sys.canvas.height / 10 * 6.6, "Punteggi",
+        this.buttonStartWeird = this.add.text(this.sys.canvas.width / 2, this.sys.canvas.height / 10 * 6.6, "Modalità aggiuntiva",
+            {font: '44px arc-font', fill: '#dbba16'}
+        ).setOrigin(0.5)
+            .setInteractive()
+            .on('pointerover', () => this.buttonStartWeird.setColor('#30db16'))
+            .on('pointerout', () => this.buttonStartWeird.setColor('#dbba16'))
+            .on('pointerdown', () => this.buttonStartWeird.setFont('38px arc-font'))
+            .on('pointerup', () => {
+                this.buttonStartWeird.setFont('44px arc-font');
+
+                this.scene.stop('menu');
+
+                (this.scene.get('main') as Main).scene.restart({gameMode: 1});
+                (this.scene.get('gameHud') as GameHud).initPlayerHealth(1);
+            });
+
+        this.buttonScore = this.add.text(this.sys.canvas.width / 2, this.sys.canvas.height / 10 * 7.4, "Punteggi",
             {font: '44px arc-font', fill: '#dbba16'}
         ).setOrigin(0.5)
             .setInteractive()
