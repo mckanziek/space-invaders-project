@@ -14,6 +14,7 @@ export class Preloader extends Phaser.Scene {
 
     init() {
         this.scene.start('main');
+        this.scene.launch('gameHud');
     }
 
     preload(){

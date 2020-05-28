@@ -50,6 +50,6 @@ export class Player extends Phaser.GameObjects.Image {
         if (this.bulletsAlive.getLength() > 0)
             this.bulletsAlive.getChildren()[0].update();
 
-        if (this.customKeys.D.isDown) this.mainScene.events.emit('decraseHealth');
+        //if (this.customKeys.D.isDown) this.mainScene.events.emit('decraseHealth');
     }
 }

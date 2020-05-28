@@ -26,8 +26,12 @@ export class Enemy extends Phaser.GameObjects.Image {
         Enemy.width = this.width;
         Enemy.height = this.height;
 
+        Enemy.speed = 10;
+        Enemy.timingMove = 0;
+        Enemy.enemyMovedelay = 420;
+
         Enemy.mainScene = scene;
-        Enemy.canvas = scene.sys.canvas
+        Enemy.canvas = scene.sys.canvas;
 
         this.customY = this.y;
         this.scene.physics.world.enable(this);
@@ -90,7 +94,7 @@ export class Enemy extends Phaser.GameObjects.Image {
     shoot(){
         let shot = new Shot(Enemy.mainScene, this.x, this.y, 450, 'shotTest');
         this.bulletsAlive.add(shot);
-        Enemy.mainScene.checkcollisionShotEnemy(shot);
+        Enemy.mainScene.checkCollisionShotEnemy(shot);
 
         if (this.bulletsAlive.getLength() > 0)
             this.bulletsAlive.getChildren()[0].update();

@@ -8,9 +8,9 @@ export class Main extends Phaser.Scene {
 
     private enemiesPoints = [30, 20, 20, 10, 10];
     private enemiesShootTiming = 0;
-    private enemiesShootDelay = 1666;
+    private enemiesShootDelay: integer | any;
     private enemiesMarginGrid: number = 50;
-    private enemiesReferGrid: Array<number[]> = [];
+    private enemiesReferGrid: Array<number[]> | any;
     private enemies: Phaser.GameObjects.Group | any;
 
     constructor() {
@@ -25,6 +25,8 @@ export class Main extends Phaser.Scene {
     create() {
         this.player = new Player(this, 'shipTest', this.key);
 
+        this.enemiesReferGrid = [];
+        this.enemiesShootDelay = 1666;
         for (let i = 0; i < 5; i++) {
             const row = [];
             for (let j = 0; j < 11; j++) {
@@ -40,6 +42,8 @@ export class Main extends Phaser.Scene {
             }
             this.enemiesReferGrid.push(row);
         }
+
+        console.log(this.enemiesReferGrid)
     }
 
     update(time: integer) {
@@ -77,7 +81,7 @@ export class Main extends Phaser.Scene {
         console.log(this.getEnemiesAreaRange())
     }
 
-    checkcollisionShotEnemy(enemyShot: any){
+    checkCollisionShotEnemy(enemyShot: any){
         let player  = this.player;
 
         this.physics.add.overlap(enemyShot, player, function () {
@@ -147,5 +151,9 @@ export class Main extends Phaser.Scene {
 
     decraseEnemiesShootDelay() {
         this.enemiesShootDelay -= (this.enemiesShootDelay - 50 < 1500) ? 50 : 0;
+    }
+
+    restart(){
+        this.scene.restart();
     }
 }

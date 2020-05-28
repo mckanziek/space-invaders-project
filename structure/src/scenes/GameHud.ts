@@ -5,29 +5,19 @@ export class GameHud extends Phaser.Scene {
     private playerHealth: Phaser.GameObjects.Group | any;
 
     constructor() {
-        super({key: "gameHud", active: true});
+        super({key: "gameHud"});
     }
 
     init(){
         this.mainScene = this.scene.get('main');
-        this.playerHealth = this.mainScene.add.group();
+        this.playerHealth = this.add.group();
+        this.initPlayerHealth();
     }
 
     create() {
         let scoreLabel = this.add.text(15, 15, "Punteggio: " + this.score,
             {font: '30px Arial', fill: '#fff'}
         );
-
-        for(let i = 1; i <= 3; i++){
-            let healthObj = this.mainScene.add.image(0, 0, 'healthTest');
-            let scale = 25 / healthObj.width;
-
-            healthObj.setScale(scale);
-            healthObj.x = (this.mainScene.sys.canvas.width - (i * (healthObj.width * scale)));
-            healthObj.y = (healthObj.height * scale);
-
-            this.playerHealth.add(healthObj);
-        }
 
         this.mainScene.events.on('incrementScore', function(points: integer){
             // @ts-ignore
@@ -36,9 +26,32 @@ export class GameHud extends Phaser.Scene {
             scoreLabel.setText("Punteggio: " + this.score);
         }, this);
 
-        this.mainScene.events.on('decraseHealth', function(){
-            // @ts-ignore
-            this.playerHealth.getChildren()[this.playerHealth.getChildren().length - 1].destroy();
-        }, this);
+        this.mainScene.events.on('decraseHealth', this.decrasePlayerHealth, this);
+    }
+
+    initPlayerHealth(){
+        for(let i = 1; i <= 3; i++){
+            let healthObj = this.add.image(0, 0, 'healthTest');
+            let scale = 25 / healthObj.width;
+
+            healthObj.setScale(scale);
+            healthObj.x = (this.mainScene.sys.canvas.width - (i * (healthObj.width * scale)));
+            healthObj.y = (healthObj.height * scale);
+
+            this.playerHealth.add(healthObj);
+        }
+    }
+
+    decrasePlayerHealth(){
+        this.playerHealth.getChildren()[this.playerHealth.getChildren().length - 1].destroy();
+        if(this.playerHealth.getChildren().length == 0){
+            this.scene.pause('main');
+
+            this.scene.launch('loseScreen');
+        }
+    }
+
+    getScore(){
+        return this.score;
     }
 }
