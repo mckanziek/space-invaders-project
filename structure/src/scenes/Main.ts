@@ -32,7 +32,7 @@ export class Main extends Phaser.Scene {
             for (let j = 0; j < 11; j++) {
                 this.enemies.add(new Enemy(this,
                     (60 + (j * this.enemiesMarginGrid)),
-                    (60 + (i * this.enemiesMarginGrid)),
+                    (90 + (i * this.enemiesMarginGrid)),
                     '',
                     j + ";" + i,
                     this.enemiesPoints[i]

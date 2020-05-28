@@ -1,9 +1,10 @@
 import "phaser";
 import {Preloader} from './scenes/Preloader';
 import {Main} from './scenes/Main';
-import {Menu} from './scenes/Menu'
+import {Menu} from './scenes/Menus/Menu';
+import {PauseMenu} from './scenes/Menus/PauseMenu';
 import {GameHud} from './scenes/GameHud';
-import {Lose} from './scenes/Lose';
+import {Lose} from './scenes/Menus/Lose';
 
 const config: GameConfig = {
     type: Phaser.AUTO, //Setta automaticamente il motore per il renderizzato
@@ -17,7 +18,7 @@ const config: GameConfig = {
             debug: false
         }
     },
-    scene: [Preloader, Main, Menu, GameHud, Lose]
+    scene: [Preloader, Main, Menu, PauseMenu, GameHud, Lose]
 };
 
 window.addEventListener('load', ()=>{

@@ -1,8 +1,12 @@
+import {Main} from "./Main";
+
 export class GameHud extends Phaser.Scene {
     private mainScene: any;
 
     private score = 0;
     private playerHealth: Phaser.GameObjects.Group | any;
+
+    private pauseBotton: any;
 
     constructor() {
         super({key: "gameHud"});
@@ -14,15 +18,31 @@ export class GameHud extends Phaser.Scene {
     }
 
     create() {
-        let scoreLabel = this.add.text(15, 15, "Punteggio: " + this.score,
-            {font: '30px Arial', fill: '#fff'}
+        let scoreLabel = this.add.text(15, 15, "Punteggio 0",
+            {font: '40px arc-font', fill: '#fff'}
         );
+
+        this.pauseBotton = this.add.text(this.sys.canvas.width - 45, this.sys.canvas.height - 30, "Pausa",
+            {font: '35px arc-font', fill: '#fff'}
+        ).setOrigin(0.5)
+            .setInteractive()
+            .on('pointerover', () => this.pauseBotton.setColor('#dbba16'))
+            .on('pointerout', () => this.pauseBotton.setColor('#fff'))
+            .on('pointerdown', () => this.pauseBotton.setFont('29px arc-font'))
+            .on('pointerup', () => {
+                this.pauseBotton.setFont('35px arc-font');
+
+                this.scene.pause('main');
+
+                this.scene.launch('pauseMenu');
+                this.scene.moveAbove('gameHud', 'menuPause');
+            });
 
         this.mainScene.events.on('incrementScore', function(points: integer){
             // @ts-ignore
             this.score += points;
             // @ts-ignore
-            scoreLabel.setText("Punteggio: " + this.score);
+            scoreLabel.setText("Punteggio " + this.score);
         }, this);
 
         this.mainScene.events.on('decraseHealth', this.decrasePlayerHealth, this);

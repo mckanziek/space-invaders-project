@@ -26,7 +26,7 @@ export class Player extends Phaser.GameObjects.Image {
 
         //centralizzo la navicella
         this.x = this.canvas.width / 2;
-        this.y = this.canvas.height - this.height * this.scale;
+        this.y = (this.canvas.height - this.height * this.scale) - 15;
 
         //aggiungo la navicella in scena e attivo le fisiche
         this.scene.physics.world.enable(this);

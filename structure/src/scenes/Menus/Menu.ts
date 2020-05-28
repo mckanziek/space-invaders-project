@@ -1,5 +1,5 @@
-import {GameHud} from "./GameHud";
-import {Main} from "./Main";
+import {GameHud} from "../GameHud";
+import {Main} from "../Main";
 
 export class Menu extends Phaser.Scene {
     private camera: any;
