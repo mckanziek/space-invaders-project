@@ -19,17 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Enemies shoot">
-      <change afterPath="$PROJECT_DIR$/structure/src/scenes/Menus/PauseMenu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Pause menu">
       <change beforePath="$PROJECT_DIR$/build/game.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/game.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/GameInit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/GameInit.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Player.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/scenes/GameHud.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/GameHud.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Lose.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Menus/Lose.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Menus/Menu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Preloader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Preloader.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Menus/PauseMenu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Menus/PauseMenu.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590685763678</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Pause menu">
+      <created>1590692204929</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590692204929</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,7 +141,8 @@
     <MESSAGE value="commit test" />
     <MESSAGE value="Enemies shoot" />
     <MESSAGE value="Main Menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Main Menu" />
+    <MESSAGE value="Pause menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pause menu" />
   </component>
   <component name="WindowStateProjectService">
     <state x="26" y="99" width="890" height="915" key="CommitChangelistDialog2" timestamp="1586871182655">

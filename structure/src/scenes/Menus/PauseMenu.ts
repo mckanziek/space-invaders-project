@@ -12,7 +12,9 @@ export class PauseMenu extends Phaser.Scene {
 
     init() {
         this.camera = this.cameras.add(0, 0, this.sys.canvas.width, this.sys.canvas.height);
-        this.camera.setBackgroundColor('rgba(0, 0, 0, 0.75)')
+        this.camera.setBackgroundColor('rgba(0, 0, 0, 0.75)');
+
+        this.scene.moveUp('pauseMenu');
     }
 
     create() {

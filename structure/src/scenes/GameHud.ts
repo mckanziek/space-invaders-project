@@ -35,7 +35,6 @@ export class GameHud extends Phaser.Scene {
                 this.scene.pause('main');
 
                 this.scene.launch('pauseMenu');
-                this.scene.moveAbove('gameHud', 'menuPause');
             });
 
         this.mainScene.events.on('incrementScore', function(points: integer){
