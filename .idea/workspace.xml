@@ -19,17 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Pause menu">
+    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Game mode &amp; Score history">
+      <change afterPath="$PROJECT_DIR$/structure/src/scenes/Menus/Scores.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/game.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/game.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Player.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Shot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Shot.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/vendors.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/vendors.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/GameInit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/GameInit.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/scenes/GameHud.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/GameHud.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Menus/Lose.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Menus/Lose.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/scenes/Menus/Menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Menus/Menu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Preloader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Preloader.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/structure/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590692710473</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Game mode &amp; Score history">
+      <created>1590703608599</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1590703608599</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,7 +161,8 @@
     <MESSAGE value="Enemies shoot" />
     <MESSAGE value="Main Menu" />
     <MESSAGE value="Pause menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pause menu" />
+    <MESSAGE value="Game mode &amp; Score history" />
+    <option name="LAST_COMMIT_MESSAGE" value="Game mode &amp; Score history" />
   </component>
   <component name="WindowStateProjectService">
     <state x="26" y="99" width="890" height="915" key="CommitChangelistDialog2" timestamp="1586871182655">
@@ -183,9 +189,9 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="681" y="315" width="548" height="448" key="refactoring.ChangeSignatureDialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590672718852" />
-    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1590616274811">
+    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1590748968808">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590616274811" />
+    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590748968808" />
   </component>
 </project>

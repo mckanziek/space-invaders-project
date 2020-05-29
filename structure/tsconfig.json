@@ -1,6 +1,11 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es2016",
+        "lib": [
+            "es2017",
+            "dom",
+            "scripthost"
+        ],
         "moduleResolution": "node",
         "module": "CommonJS",
         "strict": true,

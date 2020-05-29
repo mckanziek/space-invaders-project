@@ -71,6 +71,11 @@ export class Menu extends Phaser.Scene {
             .on('pointerdown', () => this.buttonScore.setFont('38px arc-font'))
             .on('pointerup', () => {
                 this.buttonScore.setFont('44px arc-font');
+
+                this.scene.stop('menu');
+
+                this.events.emit('updateScores');
+                this.scene.start('scores');
             });
     }
 }

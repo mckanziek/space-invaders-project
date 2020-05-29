@@ -3,6 +3,7 @@ import {Preloader} from './scenes/Preloader';
 import {Main} from './scenes/Main';
 import {Menu} from './scenes/Menus/Menu';
 import {PauseMenu} from './scenes/Menus/PauseMenu';
+import {Scores} from './scenes/Menus/Scores';
 import {GameHud} from './scenes/GameHud';
 import {Lose} from './scenes/Menus/Lose';
 
@@ -18,7 +19,7 @@ const config: GameConfig = {
             debug: false
         }
     },
-    scene: [Preloader, Main, Menu, PauseMenu, GameHud, Lose]
+    scene: [Preloader, Main, Menu, PauseMenu, Scores, GameHud, Lose]
 };
 
 window.addEventListener('load', ()=>{

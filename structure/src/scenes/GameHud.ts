@@ -1,9 +1,10 @@
+import {Scores} from "./Menus/Scores";
+
 export class GameHud extends Phaser.Scene {
     private mainScene: any;
     private gameMode: integer = 0;
 
     private score = 0;
-    private scoreHistory: Array<integer> = [];
     private playerHealth: Phaser.GameObjects.Group | any;
 
     private scoreLabel: any;
@@ -68,7 +69,6 @@ export class GameHud extends Phaser.Scene {
             this.playerHealth.add(healthObj);
         }
 
-        this.scoreHistory.push(this.score);
         this.score = 0;
 
         this.scoreLabel.setText("Punteggio 0");
@@ -79,16 +79,28 @@ export class GameHud extends Phaser.Scene {
         if(this.playerHealth.getChildren().length == 0){
             this.scene.pause('main');
 
+            this.pushScore();
+
             this.scene.launch('loseScreen');
         }
     }
 
-    getScore(){
-        return this.score;
+    getDate(){
+        const date = new Date();
+
+        let d = date.getDate();
+        let m = date.getMonth() + 1;
+        let y = date.getFullYear();
+
+        return d + "/" + m + "/" + y;
     }
 
-    getScoreHistory(){
-        return this.scoreHistory;
+    pushScore(){
+        Scores.scores.push([this.score, this.getDate()]);
+    }
+
+    getScore(){
+        return this.score;
     }
 
     getGameMode(){
