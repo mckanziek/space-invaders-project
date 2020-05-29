@@ -4,6 +4,7 @@ import {Enemy} from '../gameObjs/Enemy';
 
 export class Main extends Phaser.Scene {
     private gameMode: integer = 0;
+    private gameRound: integer = 0;
     private key: any;
 
     private player: Player | any;
@@ -50,8 +51,6 @@ export class Main extends Phaser.Scene {
             }
             this.enemiesReferGrid.push(row);
         }
-
-        console.log(this.enemiesReferGrid)
     }
 
     update(time: integer) {
@@ -94,8 +93,6 @@ export class Main extends Phaser.Scene {
         });
 
         this.enemiesReferGrid = grid;
-
-        console.log(this.getEnemiesAreaRange())
     }
 
     checkCollisionShotEnemy(enemyShot: any) {
@@ -129,16 +126,14 @@ export class Main extends Phaser.Scene {
                 for (let j = 0; j < 11; j++)
                     if (j >= a && j <= b)
                         new ShieldPiece(this, '', x + j * 10, y + i * 10);
-                a--;
-                b++;
+                a--; b++;
             } else {
                 for (let j = 0; j < 11; j++)
                     if (!(j >= c && j <= d))
                         new ShieldPiece(this, '', x + j * 10, y + i * 10);
 
                 if (i < 3) {
-                    c--;
-                    d++;
+                    c--;d++;
                 }
             }
         }
@@ -151,28 +146,43 @@ export class Main extends Phaser.Scene {
 
         let firstEnemy;
         let lastEnemy;
-        let bottonEnemy;
+        let buttonEnemy;
 
-        for (let i = 0; i < this.enemiesReferGrid.length; i++) {
-            for (let j = this.enemiesReferGrid[i].length - 1; j >= 0; j--) {
-                if (this.enemiesReferGrid[i][j] && j > maxXEnemy) {
-                    maxXEnemy = j;
-                    lastEnemy = this.enemies.getChildren()[((i * 11) + j)];
-                }
+        if(!this.enemiesGroupIsEmpty()) {
+            for (let i = 0; i < this.enemiesReferGrid.length; i++) {
+                for (let j = this.enemiesReferGrid[i].length - 1; j >= 0; j--) {
+                    if (this.enemiesReferGrid[i][j] && j > maxXEnemy) {
+                        maxXEnemy = j;
+                        lastEnemy = this.enemies.getChildren()[((i * 11) + j)];
+                    }
 
-                if (this.enemiesReferGrid[i][(10 - j)] && (10 - j) < minXEnemy) {
-                    minXEnemy = (10 - j);
-                    firstEnemy = this.enemies.getChildren()[((i * 11) + (10 - j))];
-                }
+                    if (this.enemiesReferGrid[i][(10 - j)] && (10 - j) < minXEnemy) {
+                        minXEnemy = (10 - j);
+                        firstEnemy = this.enemies.getChildren()[((i * 11) + (10 - j))];
+                    }
 
-                if (this.enemiesReferGrid[4 - i][(10 - j)] && (4 - i) > maxYEnemy) {
-                    maxYEnemy = (4 - i);
-                    bottonEnemy = this.enemies.getChildren()[(((4 - i) * 11) + j)];
+                    if (this.enemiesReferGrid[4 - i][(10 - j)] && (4 - i) > maxYEnemy) {
+                        maxYEnemy = (4 - i);
+                        buttonEnemy = this.enemies.getChildren()[(((4 - i) * 11) + j)];
+                    }
                 }
             }
-        }
+        }else{
+            this.scene.pause('main');
 
-        return this.correctEnemiesRefer([firstEnemy, lastEnemy, bottonEnemy]);
+            this.scene.launch('generalMessage');
+        }
+        return this.correctEnemiesRefer([firstEnemy, lastEnemy, buttonEnemy]);
+    }
+
+    enemiesGroupIsEmpty(){
+        let result = true;
+
+        this.enemies.getChildren().forEach((enemy: Enemy) => {
+            if(enemy.active) result = false;
+        });
+
+        return result;
     }
 
     correctEnemiesRefer(refers: any) {
@@ -191,19 +201,17 @@ export class Main extends Phaser.Scene {
     }
 
     getEnemiesShooting() {
-        var bottonEnemies = [];
+        const buttonEnemies = [];
 
-        for (let i = 0; i < 5; i++) {
-            for (let j = 0; j < 11; j++) {
+        for (let i = 0; i < 5; i++)
+            for (let j = 0; j < 11; j++)
                 if (this.enemiesReferGrid[i][j])
-                    bottonEnemies[j] = this.enemies.getChildren()[((i * 11) + j)]
-            }
-        }
+                    buttonEnemies[j] = this.enemies.getChildren()[((i * 11) + j)];
 
-        return bottonEnemies
+        return buttonEnemies
     }
 
-    decraseEnemiesShootDelay() {
+    decreaseEnemiesShootDelay() {
         this.enemiesShootDelay -= (this.enemiesShootDelay - 50 < 1500) ? 50 : 0;
     }
 }

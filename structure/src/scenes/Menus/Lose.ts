@@ -43,7 +43,7 @@ export class Lose extends Phaser.Scene {
 
                 this.scene.stop('loseScreen');
 
-                (this.scene.get('gameHud') as GameHud).initPlayerHealth(gameMode);
+                (this.scene.get('gameHud') as GameHud).initPlayerHealth(gameMode, 0);
                 (this.scene.get('main') as Main).scene.restart();
             });
 

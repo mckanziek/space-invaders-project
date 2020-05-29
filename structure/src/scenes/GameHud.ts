@@ -8,7 +8,7 @@ export class GameHud extends Phaser.Scene {
     private playerHealth: Phaser.GameObjects.Group | any;
 
     private scoreLabel: any;
-    private pauseBotton: any;
+    private pauseButton: any;
 
     constructor() {
         super({key: "gameHud"});
@@ -24,15 +24,15 @@ export class GameHud extends Phaser.Scene {
             {font: '40px arc-font', fill: '#fff'}
         );
 
-        this.pauseBotton = this.add.text(this.sys.canvas.width - 45, this.sys.canvas.height - 30, "Pausa",
+        this.pauseButton = this.add.text(this.sys.canvas.width - 45, this.sys.canvas.height - 30, "Pausa",
             {font: '35px arc-font', fill: '#fff'}
         ).setOrigin(0.5)
             .setInteractive()
-            .on('pointerover', () => this.pauseBotton.setColor('#dbba16'))
-            .on('pointerout', () => this.pauseBotton.setColor('#fff'))
-            .on('pointerdown', () => this.pauseBotton.setFont('29px arc-font'))
+            .on('pointerover', () => this.pauseButton.setColor('#dbba16'))
+            .on('pointerout', () => this.pauseButton.setColor('#fff'))
+            .on('pointerdown', () => this.pauseButton.setFont('29px arc-font'))
             .on('pointerup', () => {
-                this.pauseBotton.setFont('35px arc-font');
+                this.pauseButton.setFont('35px arc-font');
 
                 this.scene.pause('main');
 
@@ -46,35 +46,36 @@ export class GameHud extends Phaser.Scene {
             this.scoreLabel.setText("Punteggio " + this.score);
         }, this);
 
-        this.mainScene.events.on('decraseHealth', this.decrasePlayerHealth, this);
+        this.mainScene.events.on('decraseHealth', this.decreasePlayerHealth, this);
     }
 
-    initPlayerHealth(gameMode: integer){
-        this.gameMode = gameMode;
+    initPlayerHealth(gameMode: integer, score: integer){
 
-        // @ts-ignore
-        this.playerHealth.getChildren().forEach(health => health.destroy());
-        // @ts-ignore
-        this.playerHealth.getChildren().forEach(health => health.destroy());
+        if(score == 0) {
+            // @ts-ignore
+            this.playerHealth.getChildren().forEach(health => health.destroy());
+            // @ts-ignore
+            this.playerHealth.getChildren().forEach(health => health.destroy());
 
 
-        for(let i = 1; i <= 3; i++){
-            let healthObj = this.add.image(0, 0, 'playerHealthSprt' + gameMode);
-            let scale = 25 / healthObj.width;
+            for (let i = 1; i <= 3; i++) {
+                let healthObj = this.add.image(0, 0, 'playerHealthSprt' + gameMode);
+                let scale = 25 / healthObj.width;
 
-            healthObj.setScale(scale);
-            healthObj.x = (this.mainScene.sys.canvas.width - (i * (healthObj.width * scale)));
-            healthObj.y = (healthObj.height * scale);
+                healthObj.setScale(scale);
+                healthObj.x = (this.mainScene.sys.canvas.width - (i * (healthObj.width * scale)));
+                healthObj.y = (healthObj.height * scale);
 
-            this.playerHealth.add(healthObj);
+                this.playerHealth.add(healthObj);
+            }
         }
 
-        this.score = 0;
+        this.score = score;
 
-        this.scoreLabel.setText("Punteggio 0");
+        this.scoreLabel.setText("Punteggio " + this.score);
     }
 
-    decrasePlayerHealth(){
+    decreasePlayerHealth(){
         this.playerHealth.getChildren()[this.playerHealth.getChildren().length - 1].destroy();
         if(this.playerHealth.getChildren().length == 0){
             this.scene.pause('main');
@@ -97,6 +98,7 @@ export class GameHud extends Phaser.Scene {
 
     pushScore(){
         Scores.scores.push([this.score, this.getDate()]);
+        console.log(Scores.scores);
     }
 
     getScore(){

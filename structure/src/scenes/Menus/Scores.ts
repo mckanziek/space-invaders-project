@@ -108,6 +108,8 @@ export class Scores extends Phaser.Scene {
             yRefer += 40;
             referDate = data[1];
         });
+
+        console.log(Scores.scores)
     }
 
     reformatScores(){

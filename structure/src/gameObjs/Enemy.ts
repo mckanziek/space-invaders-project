@@ -60,27 +60,24 @@ export class Enemy extends Phaser.GameObjects.Image {
     }
 
     static updatePosition(time: integer) {
-        let firstEnemy = Enemy.mainScene.getEnemiesAreaRange()[0];
-        let lastEnemy = Enemy.mainScene.getEnemiesAreaRange()[1];
+        let dataPositions = Enemy.mainScene.getEnemiesAreaRange();
 
         if (this.timingMove < time) {
             // @ts-ignore
             Enemy.mainScene.enemies.getChildren().forEach(enemy => enemy.x += Enemy.speed);
 
-            if (!(lastEnemy.x <= Enemy.canvas.width - (Enemy.width * 2))
-                || !(firstEnemy.x > (this.width * 2))) {
+            if (!(dataPositions[1].x <= Enemy.canvas.width - (Enemy.width * 2))
+                || !(dataPositions[0].x > (this.width * 2))) {
                 Enemy.speed *= -1;
-                Enemy.goDown();
+                Enemy.goDown(dataPositions[2]);
             }
 
             Enemy.timingMove = time + Enemy.enemyMovedelay;
         }
     }
 
-    static goDown() {
-        let bottonEnemy = Enemy.mainScene.getEnemiesAreaRange()[2];
-
-        if (bottonEnemy.customY < Enemy.canvas.height - (Enemy.height * 2)) {
+    static goDown(buttonEnemy: any) {
+        if (buttonEnemy.customY < Enemy.canvas.height - (Enemy.height * 2)) {
             setTimeout(function () {
                 // @ts-ignore
                 Enemy.mainScene.enemies.getChildren().forEach(enemy => {
@@ -107,7 +104,7 @@ export class Enemy extends Phaser.GameObjects.Image {
 
         Enemy.mainScene.sound.play("enemyKilled");
         Enemy.mainScene.events.emit('incrementScore', this.point);
-        Enemy.mainScene.decraseEnemiesShootDelay();
+        Enemy.mainScene.decreaseEnemiesShootDelay();
 
         this.setActive(false);
         this.setVisible(false);

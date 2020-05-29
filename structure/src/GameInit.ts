@@ -2,6 +2,7 @@ import "phaser";
 import {Preloader} from './scenes/Preloader';
 import {Main} from './scenes/Main';
 import {Menu} from './scenes/Menus/Menu';
+import {GeneralMessage} from './scenes/GeneralMessage';
 import {PauseMenu} from './scenes/Menus/PauseMenu';
 import {Scores} from './scenes/Menus/Scores';
 import {GameHud} from './scenes/GameHud';
@@ -19,7 +20,7 @@ const config: GameConfig = {
             debug: false
         }
     },
-    scene: [Preloader, Main, Menu, PauseMenu, Scores, GameHud, Lose],
+    scene: [Preloader, Main, Menu, PauseMenu, GeneralMessage, Scores, GameHud, Lose],
 };
 
 window.addEventListener('load', ()=>{

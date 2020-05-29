@@ -17,7 +17,9 @@ export class Menu extends Phaser.Scene {
 
     init() {
         this.camera = this.cameras.add(0, 0, this.sys.canvas.width, this.sys.canvas.height);
-        this.camera.setBackgroundColor('rgba(0, 0, 0, 1)')
+        this.camera.setBackgroundColor('rgba(0, 0, 0, 1)');
+
+        this.events.emit('updateScores');
     }
 
     create() {
@@ -43,7 +45,7 @@ export class Menu extends Phaser.Scene {
                 this.scene.stop('menu');
 
                 (this.scene.get('main') as Main).scene.restart({gameMode: 0});
-                (this.scene.get('gameHud') as GameHud).initPlayerHealth(0);
+                (this.scene.get('gameHud') as GameHud).initPlayerHealth(0, 0);
             });
 
         this.buttonStartWeird = this.add.text(this.sys.canvas.width / 2, this.sys.canvas.height / 10 * 6.6, "Modalità aggiuntiva",
@@ -59,7 +61,7 @@ export class Menu extends Phaser.Scene {
                 this.scene.stop('menu');
 
                 (this.scene.get('main') as Main).scene.restart({gameMode: 1});
-                (this.scene.get('gameHud') as GameHud).initPlayerHealth(1);
+                (this.scene.get('gameHud') as GameHud).initPlayerHealth(1, 0);
             });
 
         this.buttonScore = this.add.text(this.sys.canvas.width / 2, this.sys.canvas.height / 10 * 7.4, "Punteggi",

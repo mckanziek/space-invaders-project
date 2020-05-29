@@ -20,6 +20,9 @@ export class Preloader extends Phaser.Scene {
         this.scene.start('main', {gameMode: 0});
         this.scene.pause('main');
 
+        this.scene.launch('scores');
+        this.scene.stop('scores');
+
         this.scene.launch('menu');
         this.scene.launch('gameHud');
 
