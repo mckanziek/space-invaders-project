@@ -11,7 +11,7 @@ const config: GameConfig = {
     type: Phaser.AUTO, //Setta automaticamente il motore per il renderizzato
     parent: "canvas",
     width: 777,
-    height: 666,
+    height: 777,
     physics: {
         default: "arcade",
         arcade: {
@@ -19,7 +19,7 @@ const config: GameConfig = {
             debug: false
         }
     },
-    scene: [Preloader, Main, Menu, PauseMenu, Scores, GameHud, Lose]
+    scene: [Preloader, Main, Menu, PauseMenu, Scores, GameHud, Lose],
 };
 
 window.addEventListener('load', ()=>{

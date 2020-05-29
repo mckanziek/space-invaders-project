@@ -1,4 +1,5 @@
 import {Player} from '../gameObjs/Player';
+import {ShieldPiece} from '../gameObjs/ShieldPiece';
 import {Enemy} from '../gameObjs/Enemy';
 
 export class Main extends Phaser.Scene {
@@ -28,6 +29,9 @@ export class Main extends Phaser.Scene {
 
     create() {
         this.player = new Player(this, 'playerSprt' + this.gameMode, this.key);
+
+        for (let i = 0; i < 4; i++)
+            this.initShield(96 + (i * 161), this.sys.canvas.height - 202);
 
         this.enemiesReferGrid = [];
         this.enemiesShootDelay = 1666;
@@ -80,18 +84,64 @@ export class Main extends Phaser.Scene {
             }
         });
 
+        ShieldPiece.pieces.forEach((piece: ShieldPiece) => {
+            if (piece.active) {
+                this.physics.add.overlap(playerShot, piece, function () {
+                    piece.destroy();
+                    playerShot.destroy();
+                });
+            }
+        });
+
         this.enemiesReferGrid = grid;
 
         console.log(this.getEnemiesAreaRange())
     }
 
-    checkCollisionShotEnemy(enemyShot: any){
-        let player  = this.player;
+    checkCollisionShotEnemy(enemyShot: any) {
+        let player = this.player;
 
         this.physics.add.overlap(enemyShot, player, function () {
             player.mainScene.events.emit('decraseHealth');
             enemyShot.destroy();
         });
+
+        ShieldPiece.pieces.forEach((piece: ShieldPiece) => {
+            if (piece.active) {
+                this.physics.add.overlap(enemyShot, piece, function () {
+                    piece.destroy();
+                    enemyShot.destroy();
+                });
+            }
+        });
+
+    }
+
+    initShield(x: integer, y: integer) {
+        let a = 3;
+        let b = 7;
+
+        let c = 4;
+        let d = 6;
+
+        for (let i = 0; i < 7; i++) {
+            if (i < 4) {
+                for (let j = 0; j < 11; j++)
+                    if (j >= a && j <= b)
+                        new ShieldPiece(this, '', x + j * 10, y + i * 10);
+                a--;
+                b++;
+            } else {
+                for (let j = 0; j < 11; j++)
+                    if (!(j >= c && j <= d))
+                        new ShieldPiece(this, '', x + j * 10, y + i * 10);
+
+                if (i < 3) {
+                    c--;
+                    d++;
+                }
+            }
+        }
     }
 
     getEnemiesAreaRange() {

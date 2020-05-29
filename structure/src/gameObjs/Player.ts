@@ -1,5 +1,4 @@
 import {Shot} from "./Shot";
-import {Main} from "../scenes/Main";
 
 export class Player extends Phaser.GameObjects.Image {
     private mainScene: any;
