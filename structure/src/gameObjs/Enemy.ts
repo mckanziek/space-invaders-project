@@ -1,4 +1,5 @@
 import {Shot} from "./Shot";
+import {GameHud} from "../scenes/GameHud";
 
 export class Enemy extends Phaser.GameObjects.Image {
     private readonly id: string;
@@ -76,7 +77,7 @@ export class Enemy extends Phaser.GameObjects.Image {
     }
 
     static goDown(buttonEnemy: Enemy) {
-        if (buttonEnemy.customY < Enemy.canvas.height - (Enemy.height * 2)) {
+        if (buttonEnemy.customY < Enemy.canvas.height - (Enemy.height * 3)) {
             setTimeout(function () {
                 // @ts-ignore
                 Enemy.mainScene.enemies.getChildren().forEach(enemy => {
@@ -84,6 +85,12 @@ export class Enemy extends Phaser.GameObjects.Image {
                     enemy.y = enemy.customY;
                 });
             }, 100);
+        }else{
+            this.mainScene.scene.pause('main');
+
+            (this.mainScene.scene.get('gameHud') as GameHud).pushScore();
+
+            this.mainScene.scene.launch('loseScreen');
         }
     }
 
