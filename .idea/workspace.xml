@@ -19,8 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Enemy &amp; Shields collision">
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Menus/Scores.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Menus/Scores.ts" afterDir="false" />
+    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Code cleaning">
+      <change beforePath="$PROJECT_DIR$/structure/src/scenes/GameHud.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/GameHud.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590834464027</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Code cleaning">
+      <created>1590835436220</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1590835436220</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,9 +181,9 @@
     <MESSAGE value="Pause menu" />
     <MESSAGE value="Game mode &amp; Score history" />
     <MESSAGE value="Game shields" />
-    <MESSAGE value="Code cleaning" />
     <MESSAGE value="Enemy &amp; Shields collision" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enemy &amp; Shields collision" />
+    <MESSAGE value="Code cleaning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code cleaning" />
   </component>
   <component name="WindowStateProjectService">
     <state x="26" y="99" width="890" height="915" key="CommitChangelistDialog2" timestamp="1586871182655">

@@ -2,6 +2,8 @@ import {Scores} from "./Menus/Scores";
 import {Button} from "../gameObjs/CustomObjs/Button";
 
 export class GameHud extends Phaser.Scene {
+    private graphics: Phaser.GameObjects.Graphics | any;
+
     private mainScene: Phaser.Scene | any;
     private gameMode: integer = 0;
 
@@ -16,6 +18,15 @@ export class GameHud extends Phaser.Scene {
     }
 
     init() {
+        this.graphics = this.add.graphics({
+            x: 0,
+            y: 0,
+            fillStyle: {
+                color: 0xffffff,
+                alpha: 1
+            }
+        });
+
         this.mainScene = this.scene.get('main');
         this.playerHealth = this.add.group();
     }
@@ -40,6 +51,8 @@ export class GameHud extends Phaser.Scene {
         }, this);
 
         this.mainScene.events.on('decreaseHealth', this.decreasePlayerHealth, this);
+
+        this.graphics.fillRect(0, this.sys.canvas.height - 45, this.sys.canvas.width, 3);
     }
 
     initPlayerHealth(gameMode: integer, score: integer) {
