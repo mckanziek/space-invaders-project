@@ -4,6 +4,7 @@ export class Preloader extends Phaser.Scene {
             key: 'preloader',
             pack: {
                 files: [
+                    {type: 'image', key: 'ufo', url: './assets/spritesheets/ufo.png'},
                     {type: 'image', key: 'playerSprt0', url: './assets/spritesheets/shipTest.png'},
                     {type: 'image', key: 'playerSprt1', url: './assets/spritesheets/doggo.png'},
                     {type: 'image', key: 'playerHealthSprt0', url: './assets/spritesheets/healthTest.png'},

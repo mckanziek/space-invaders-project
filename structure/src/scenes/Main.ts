@@ -55,8 +55,7 @@ export class Main extends Phaser.Scene {
         }
         this.checkCollisionEnemy();
 
-        console.log(this.enemies.getChildren().length);
-        console.log(this.getEnemiesAreaRange())
+        Ufo.ufoLives = [];
     }
 
     update(time: integer) {
@@ -87,11 +86,6 @@ export class Main extends Phaser.Scene {
                     playerShot.destroy();
                 });
             }
-
-            if(this.enemies.length % 4 == 0) {
-                console.log('AHORA')
-                new Ufo(this, '');
-            }
         });
 
         ShieldPiece.pieces.forEach((piece: ShieldPiece) => {
@@ -102,6 +96,18 @@ export class Main extends Phaser.Scene {
                 });
             }
         });
+
+
+            if(Ufo.ufoLives.length == 0){
+                if(this.enemiesGroupLength() % 19 == 0)
+                    Ufo.ufoLives.push(new Ufo(this, 'ufo'));
+            }else{
+                let ufo = Ufo.ufoLives[0];
+                this.physics.add.overlap(playerShot, ufo, function () {
+                    ufo.die();
+                    playerShot.destroy();
+                });
+            }
 
         this.enemiesReferGrid = grid;
     }
@@ -170,7 +176,7 @@ export class Main extends Phaser.Scene {
         let lastEnemy;
         let buttonEnemy;
 
-        if (!this.enemiesGroupIsEmpty()) {
+        if (this.enemiesGroupLength() > 0) {
             for (let i = 0; i < this.enemiesReferGrid.length; i++) {
                 for (let j = this.enemiesReferGrid[i].length - 1; j >= 0; j--) {
                     if (this.enemiesReferGrid[i][j] && j > maxXEnemy) {
@@ -197,14 +203,14 @@ export class Main extends Phaser.Scene {
         return this.correctEnemiesRefer([firstEnemy, lastEnemy, buttonEnemy]);
     }
 
-    enemiesGroupIsEmpty() {
-        let result = true;
+    enemiesGroupLength() {
+        let enemies = 0;
 
         this.enemies.getChildren().forEach((enemy: Enemy) => {
-            if (enemy.active) result = false;
+            if (enemy.active) enemies++;
         });
 
-        return result;
+        return enemies;
     }
 
     correctEnemiesRefer(refers: any) {
