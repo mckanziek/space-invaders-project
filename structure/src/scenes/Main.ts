@@ -50,6 +50,8 @@ export class Main extends Phaser.Scene {
             }
             this.enemiesReferGrid.push(row);
         }
+
+        this.checkCollisionEnemy();
     }
 
     update(time: integer) {
@@ -110,7 +112,20 @@ export class Main extends Phaser.Scene {
                 });
             }
         });
+    }
 
+    checkCollisionEnemy(){
+        ShieldPiece.pieces.forEach((piece: ShieldPiece) => {
+            if (piece.active) {
+                this.enemies.getChildren().forEach((enemy: Enemy) => {
+                    if (enemy.active) {
+                        this.physics.add.overlap(enemy, piece, function () {
+                            piece.destroy();
+                        });
+                    }
+                });
+            }
+        });
     }
 
     initShield(x: integer, y: integer) {

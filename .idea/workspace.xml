@@ -20,18 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Game shields">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/game.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/game.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/vendors.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/vendors.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Player.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/GameHud.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/GameHud.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/GeneralMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/GeneralMessage.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/scenes/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Menus/Lose.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Menus/Lose.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Menus/Menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Menus/Menu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Menus/PauseMenu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Menus/PauseMenu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Menus/Scores.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Menus/Scores.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +59,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -177,7 +171,8 @@
     <MESSAGE value="Pause menu" />
     <MESSAGE value="Game mode &amp; Score history" />
     <MESSAGE value="Game shields" />
-    <option name="LAST_COMMIT_MESSAGE" value="Game shields" />
+    <MESSAGE value="Code cleaning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code cleaning" />
   </component>
   <component name="WindowStateProjectService">
     <state x="26" y="99" width="890" height="915" key="CommitChangelistDialog2" timestamp="1586871182655">
@@ -192,10 +187,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="543" y="278" width="824" height="522" key="IDE.errors.dialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590600759137" />
-    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1590791854645">
+    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1590833562273">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590791854645" />
+    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590833562273" />
     <state x="735" y="458" width="439" height="163" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590685842426">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
