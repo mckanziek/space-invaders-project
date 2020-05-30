@@ -1,3 +1,5 @@
+import {Button} from "../../gameObjs/CustomObjs/Button";
+
 export class Scores extends Phaser.Scene {
     private camera: any;
 
@@ -42,19 +44,12 @@ export class Scores extends Phaser.Scene {
             {font: '70px arc-font', fill: '#347deb'}
         ).setOrigin(0.5);
 
-        this.buttonMenu = this.add.text(15, 15, "Menu",
-            {font: '40px arc-font', fill: '#dbba16'}
-        ).setInteractive()
-            .on('pointerover', () => this.buttonMenu.setColor('#30db16'))
-            .on('pointerout', () => this.buttonMenu.setColor('#dbba16'))
-            .on('pointerdown', () => this.buttonMenu.setFont('38px arc-font'))
-            .on('pointerup', () => {
-                this.buttonMenu.setFont('40px arc-font');
-
+        this.buttonMenu = new Button(this, 50, 30, "Menu", 40,
+            () => {
                 this.scene.stop('scores');
-
                 this.scene.start('menu');
-            });
+            }
+        );
 
         this.scene.get('menu').events.on('updateScores', this.updateScores, this);
     }

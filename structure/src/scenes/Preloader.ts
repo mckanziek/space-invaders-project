@@ -27,6 +27,7 @@ export class Preloader extends Phaser.Scene {
         this.scene.launch('gameHud');
 
         this.scene.moveAbove('gameHud', 'menu');
+        this.scene.moveAbove('gameHud', 'pauseMenu');
     }
 
     preload(){
