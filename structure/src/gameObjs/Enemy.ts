@@ -5,7 +5,7 @@ export class Enemy extends Phaser.GameObjects.Image {
     private readonly point: integer;
     private customY: number; //Serve per tenere traccia della vera Y dell'oggetto
 
-    private static mainScene: any;
+    private static mainScene: Phaser.Scene | any;
     private static canvas: any;
 
     private static width: number;
@@ -13,7 +13,7 @@ export class Enemy extends Phaser.GameObjects.Image {
 
     private static speed = 10;
     private static timingMove = 0;
-    private static enemyMovedelay = 420;
+    private static enemyMoveDelay = 420;
 
     private bulletsAlive: Phaser.GameObjects.Group = this.scene.add.group();
 
@@ -28,7 +28,7 @@ export class Enemy extends Phaser.GameObjects.Image {
 
         Enemy.speed = 10;
         Enemy.timingMove = 0;
-        Enemy.enemyMovedelay = 420;
+        Enemy.enemyMoveDelay = 420;
 
         Enemy.mainScene = scene;
         Enemy.canvas = scene.sys.canvas;
@@ -55,7 +55,7 @@ export class Enemy extends Phaser.GameObjects.Image {
 
         if(Math.abs(Enemy.speed + newSpeed * speedSign) < 25){
             Enemy.speed += newSpeed * speedSign;
-            Enemy.enemyMovedelay -= this.point;
+            Enemy.enemyMoveDelay -= this.point;
         }
     }
 
@@ -63,8 +63,7 @@ export class Enemy extends Phaser.GameObjects.Image {
         let dataPositions = Enemy.mainScene.getEnemiesAreaRange();
 
         if (this.timingMove < time) {
-            // @ts-ignore
-            Enemy.mainScene.enemies.getChildren().forEach(enemy => enemy.x += Enemy.speed);
+            Enemy.mainScene.enemies.getChildren().forEach((enemy: Enemy) => enemy.x += Enemy.speed);
 
             if (!(dataPositions[1].x <= Enemy.canvas.width - (Enemy.width * 2))
                 || !(dataPositions[0].x > (this.width * 2))) {
@@ -72,11 +71,11 @@ export class Enemy extends Phaser.GameObjects.Image {
                 Enemy.goDown(dataPositions[2]);
             }
 
-            Enemy.timingMove = time + Enemy.enemyMovedelay;
+            Enemy.timingMove = time + Enemy.enemyMoveDelay;
         }
     }
 
-    static goDown(buttonEnemy: any) {
+    static goDown(buttonEnemy: Enemy) {
         if (buttonEnemy.customY < Enemy.canvas.height - (Enemy.height * 2)) {
             setTimeout(function () {
                 // @ts-ignore

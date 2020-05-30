@@ -1,10 +1,10 @@
 import {Shot} from "./Shot";
 
 export class Player extends Phaser.GameObjects.Image {
-    private mainScene: any;
+    private mainScene: Phaser.Scene | any;
     private canvas: any;
 
-    private inputKey: any;
+    private inputKey: Phaser.Input.Keyboard.KeyboardManager | any;
     private customKeys: any = {};
 
     private readonly scale: any;
@@ -49,6 +49,7 @@ export class Player extends Phaser.GameObjects.Image {
             this.mainScene.sound.play('playerShoot');
             this.shootTiming = time + 450;
         }
+
         if (this.bulletsAlive.getLength() > 0)
             this.bulletsAlive.getChildren()[0].update();
 

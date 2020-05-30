@@ -1,10 +1,10 @@
 import {Button} from "../../gameObjs/CustomObjs/Button";
 
 export class Scores extends Phaser.Scene {
-    private camera: any;
+    private camera: Phaser.Cameras.Scene2D.CameraManager | any;
 
-    private titleLabel: any;
-    private buttonMenu: any;
+    private titleLabel: Phaser.GameObjects.Text | any;
+    private buttonMenu: Button | any;
 
     private textGroup: any = [];
 

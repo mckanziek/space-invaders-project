@@ -1,20 +1,21 @@
 import {Scores} from "./Menus/Scores";
+import {Button} from "../gameObjs/CustomObjs/Button";
 
 export class GameHud extends Phaser.Scene {
-    private mainScene: any;
+    private mainScene: Phaser.Scene | any;
     private gameMode: integer = 0;
 
     private score = 0;
     private playerHealth: Phaser.GameObjects.Group | any;
 
-    private scoreLabel: any;
-    private pauseButton: any;
+    private scoreLabel: Phaser.GameObjects.Text | any;
+    private pauseButton: Button | any;
 
     constructor() {
         super({key: "gameHud"});
     }
 
-    init(){
+    init() {
         this.mainScene = this.scene.get('main');
         this.playerHealth = this.add.group();
     }
@@ -24,34 +25,26 @@ export class GameHud extends Phaser.Scene {
             {font: '40px arc-font', fill: '#fff'}
         );
 
-        this.pauseButton = this.add.text(this.sys.canvas.width - 45, this.sys.canvas.height - 30, "Pausa",
-            {font: '35px arc-font', fill: '#fff'}
-        ).setOrigin(0.5)
-            .setInteractive()
-            .on('pointerover', () => this.pauseButton.setColor('#dbba16'))
-            .on('pointerout', () => this.pauseButton.setColor('#fff'))
-            .on('pointerdown', () => this.pauseButton.setFont('29px arc-font'))
-            .on('pointerup', () => {
-                this.pauseButton.setFont('35px arc-font');
-
+        this.pauseButton = new Button(this, this.sys.canvas.width - 45, this.sys.canvas.height - 30, "Pausa", 35,
+            () => {
                 this.scene.pause('main');
-
                 this.scene.launch('pauseMenu');
-            });
+            }
+        );
 
-        this.mainScene.events.on('incrementScore', function(points: integer){
+        this.mainScene.events.on('incrementScore', function (points: integer) {
             // @ts-ignore
             this.score += points;
             // @ts-ignore
             this.scoreLabel.setText("Punteggio " + this.score);
         }, this);
 
-        this.mainScene.events.on('decraseHealth', this.decreasePlayerHealth, this);
+        this.mainScene.events.on('decreaseHealth', this.decreasePlayerHealth, this);
     }
 
-    initPlayerHealth(gameMode: integer, score: integer){
+    initPlayerHealth(gameMode: integer, score: integer) {
 
-        if(score == 0) {
+        if (score == 0) {
             // @ts-ignore
             this.playerHealth.getChildren().forEach(health => health.destroy());
             // @ts-ignore
@@ -75,9 +68,9 @@ export class GameHud extends Phaser.Scene {
         this.scoreLabel.setText("Punteggio " + this.score);
     }
 
-    decreasePlayerHealth(){
+    decreasePlayerHealth() {
         this.playerHealth.getChildren()[this.playerHealth.getChildren().length - 1].destroy();
-        if(this.playerHealth.getChildren().length == 0){
+        if (this.playerHealth.getChildren().length == 0) {
             this.scene.pause('main');
 
             this.pushScore();
@@ -86,7 +79,7 @@ export class GameHud extends Phaser.Scene {
         }
     }
 
-    getDate(){
+    getDate() {
         const date = new Date();
 
         let d = date.getDate();
@@ -96,16 +89,16 @@ export class GameHud extends Phaser.Scene {
         return d + "/" + m + "/" + y;
     }
 
-    pushScore(){
+    pushScore() {
         Scores.scores.push([this.score, this.getDate()]);
         console.log(Scores.scores);
     }
 
-    getScore(){
+    getScore() {
         return this.score;
     }
 
-    getGameMode(){
+    getGameMode() {
         return this.gameMode;
     }
 }

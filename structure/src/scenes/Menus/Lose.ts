@@ -4,13 +4,13 @@ import {Main} from "../Main";
 import {Button} from '../../gameObjs/CustomObjs/Button';
 
 export class Lose extends Phaser.Scene {
-    private camera: any;
+    private camera: Phaser.Cameras.Scene2D.CameraManager | any;
 
-    private messageLabel: any;
-    private scoreLabel: any;
+    private messageLabel: Phaser.GameObjects.Text | any;
+    private scoreLabel: Phaser.GameObjects.Text | any;
 
-    private buttonRestart: any;
-    private buttonMenu: any;
+    private buttonRestart: Button | any;
+    private buttonMenu: Button | any;
 
     constructor() {
         super({key: "loseScreen"});

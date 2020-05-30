@@ -4,14 +4,14 @@ import {Main} from "../Main";
 import {Button} from "../../gameObjs/CustomObjs/Button";
 
 export class Menu extends Phaser.Scene {
-    private camera: any;
+    private camera: Phaser.Cameras.Scene2D.CameraManager | any;
 
-    private titleLabel: any;
-    private descriptionLabel: any;
+    private titleLabel: Phaser.GameObjects.Text | any;
+    private descriptionLabel: Phaser.GameObjects.Text | any;
 
-    private buttonStartNormal: any;
-    private buttonStartWeird: any;
-    private buttonScore: any;
+    private buttonStartNormal: Button | any;
+    private buttonStartWeird: Button | any;
+    private buttonScore: Button | any;
 
     constructor() {
         super({key: "menu"});

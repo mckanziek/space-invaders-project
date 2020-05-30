@@ -1,12 +1,12 @@
 import {Button} from "../../gameObjs/CustomObjs/Button";
 
 export class PauseMenu extends Phaser.Scene {
-    private camera: any;
+    private camera: Phaser.Cameras.Scene2D.CameraManager | any;
 
-    private tittleLabel: any;
+    private tittleLabel: Phaser.GameObjects.Text | any;
 
-    private buttonResume: any;
-    private buttonMenu: any;
+    private buttonResume: Button | any;
+    private buttonMenu: Button | any;
 
     constructor() {
         super({key: "pauseMenu"});

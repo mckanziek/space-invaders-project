@@ -4,8 +4,7 @@ import {Enemy} from '../gameObjs/Enemy';
 
 export class Main extends Phaser.Scene {
     private gameMode: integer = 0;
-    private gameRound: integer = 0;
-    private key: any;
+    private key: Phaser.Input.Keyboard.KeyboardManager | any;
 
     private player: Player | any;
 
@@ -17,7 +16,7 @@ export class Main extends Phaser.Scene {
     private enemies: Phaser.GameObjects.Group | any;
 
     constructor() {
-        super("main");
+        super({key: "main"});
     }
 
     init(data: any) {
@@ -99,7 +98,7 @@ export class Main extends Phaser.Scene {
         let player = this.player;
 
         this.physics.add.overlap(enemyShot, player, function () {
-            player.mainScene.events.emit('decraseHealth');
+            player.mainScene.events.emit('decreaseHealth');
             enemyShot.destroy();
         });
 
