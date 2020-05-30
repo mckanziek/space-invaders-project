@@ -1,13 +1,15 @@
 import {Shot} from "./Shot";
 import {GameHud} from "../scenes/GameHud";
 
-export class Enemy extends Phaser.GameObjects.Image {
+export class Enemy extends Phaser.GameObjects.Sprite {
     private readonly id: string;
     private readonly point: integer;
     private customY: number; //Serve per tenere traccia della vera Y dell'oggetto
 
     private static mainScene: Phaser.Scene | any;
     private static canvas: any;
+
+    private spriteSheet: string | any;
 
     private static width: number;
     private static height: number;
@@ -20,9 +22,12 @@ export class Enemy extends Phaser.GameObjects.Image {
 
     constructor(scene: any, x: number, y: number, spriteSheet: any, id: string, point: integer) {
         super(scene, x, y, spriteSheet);
+        super.play('move' + spriteSheet.slice(-2));
 
         this.id = id;
         this.point = point;
+
+        this.spriteSheet = spriteSheet;
 
         Enemy.width = this.width;
         Enemy.height = this.height;
@@ -37,6 +42,7 @@ export class Enemy extends Phaser.GameObjects.Image {
         this.customY = this.y;
         this.scene.physics.world.enable(this);
         this.scene.add.existing(this);
+        this.setScale(0.8);
     }
 
     getId() {
@@ -63,11 +69,12 @@ export class Enemy extends Phaser.GameObjects.Image {
     static updatePosition(time: integer) {
         let dataPositions = Enemy.mainScene.getEnemiesAreaRange();
 
+
         if (this.timingMove < time) {
             Enemy.mainScene.enemies.getChildren().forEach((enemy: Enemy) => enemy.x += Enemy.speed);
 
-            if (!(dataPositions[1].x <= Enemy.canvas.width - (Enemy.width * 2))
-                || !(dataPositions[0].x > (this.width * 2))) {
+            if (!(dataPositions[1].x <= Enemy.canvas.width - (Enemy.width * 1.2))
+                || !(dataPositions[0].x >= (Enemy.width * 1.2))) {
                 Enemy.speed *= -1;
                 Enemy.goDown(dataPositions[2]);
             }
@@ -77,7 +84,7 @@ export class Enemy extends Phaser.GameObjects.Image {
     }
 
     static goDown(buttonEnemy: Enemy) {
-        if (buttonEnemy.customY < Enemy.canvas.height - (Enemy.height * 3)) {
+        if (buttonEnemy.customY < Enemy.canvas.height - (Enemy.height * 2)) {
             setTimeout(function () {
                 // @ts-ignore
                 Enemy.mainScene.enemies.getChildren().forEach(enemy => {

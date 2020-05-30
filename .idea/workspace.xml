@@ -19,11 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Enemies Collision with shield correction">
+    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="End game">
+      <change afterPath="$PROJECT_DIR$/structure/src/gameObjs/Ufo.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/game.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/game.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/GameHud.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/GameHud.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Preloader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Preloader.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +63,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../M152/Project_Game_XFiles" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/structure/node_modules/typescript/lib" />
     <property name="ts.rename.search.for.dynamic.occurrences" value="true" />
   </component>
@@ -160,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590836748414</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="End game">
+      <created>1590839186668</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1590839186668</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,17 +211,19 @@
     <MESSAGE value="Code cleaning" />
     <MESSAGE value="Hud layout" />
     <MESSAGE value="Enemies Collision with shield correction" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enemies Collision with shield correction" />
+    <MESSAGE value="End game" />
+    <option name="LAST_COMMIT_MESSAGE" value="End game" />
   </component>
   <component name="WindowStateProjectService">
     <state x="26" y="99" width="890" height="915" key="CommitChangelistDialog2" timestamp="1586871182655">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="26" y="99" width="890" height="915" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1586871182655" />
-    <state x="259" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1586870388523">
+    <state x="259" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1590845658226">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="259" y="311" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1586870388523" />
+    <state x="259" y="311" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590845658226" />
     <state x="543" y="278" width="824" height="522" key="IDE.errors.dialog" timestamp="1590600759137">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -229,9 +240,9 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="681" y="315" width="548" height="448" key="refactoring.ChangeSignatureDialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590672718852" />
-    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1590780881677">
+    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1590844558735">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590780881677" />
+    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590844558735" />
   </component>
 </project>

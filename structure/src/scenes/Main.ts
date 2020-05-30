@@ -1,6 +1,7 @@
 import {Player} from '../gameObjs/Player';
 import {ShieldPiece} from '../gameObjs/ShieldPiece';
 import {Enemy} from '../gameObjs/Enemy';
+import {Ufo} from '../gameObjs/Ufo';
 
 export class Main extends Phaser.Scene {
     private gameMode: integer = 0;
@@ -9,9 +10,11 @@ export class Main extends Phaser.Scene {
     private player: Player | any;
 
     private enemiesPoints = [30, 20, 20, 10, 10];
+    private enemiesSprites = [0, 0, 1, 1, 2];
+
     private enemiesShootTiming = 0;
     private enemiesShootDelay: integer | any;
-    private enemiesMarginGrid: number = 50;
+    private enemiesMarginGrid: number = 55;
     private enemiesReferGrid: Array<number[]> | any;
     private enemies: Phaser.GameObjects.Group | any;
 
@@ -40,8 +43,8 @@ export class Main extends Phaser.Scene {
             for (let j = 0; j < 11; j++) {
                 this.enemies.add(new Enemy(this,
                     (60 + (j * this.enemiesMarginGrid)),
-                    (90 + (i * this.enemiesMarginGrid)),
-                    '',
+                    (99 + (i * this.enemiesMarginGrid)),
+                    'alien' + this.enemiesSprites[i] + this.gameMode,
                     j + ";" + i,
                     this.enemiesPoints[i]
                 ));
@@ -50,8 +53,10 @@ export class Main extends Phaser.Scene {
             }
             this.enemiesReferGrid.push(row);
         }
-
         this.checkCollisionEnemy();
+
+        console.log(this.enemies.getChildren().length);
+        console.log(this.getEnemiesAreaRange())
     }
 
     update(time: integer) {
@@ -81,6 +86,11 @@ export class Main extends Phaser.Scene {
                     enemy.die();
                     playerShot.destroy();
                 });
+            }
+
+            if(this.enemies.length % 4 == 0) {
+                console.log('AHORA')
+                new Ufo(this, '');
             }
         });
 
