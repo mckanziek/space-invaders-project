@@ -114,17 +114,13 @@ export class Main extends Phaser.Scene {
         });
     }
 
-    checkCollisionEnemy(){
-        ShieldPiece.pieces.forEach((piece: ShieldPiece) => {
-            if (piece.active) {
-                this.enemies.getChildren().forEach((enemy: Enemy) => {
-                    if (enemy.active) {
-                        this.physics.add.overlap(enemy, piece, function () {
-                            piece.destroy();
-                        });
-                    }
+    checkCollisionEnemy() {
+        this.enemies.getChildren().forEach((enemy: Enemy) => {
+            ShieldPiece.pieces.forEach((piece: ShieldPiece) => {
+                this.physics.add.overlap(enemy, piece, function () {
+                    if(enemy.active) piece.destroy();
                 });
-            }
+            });
         });
     }
 
@@ -140,14 +136,16 @@ export class Main extends Phaser.Scene {
                 for (let j = 0; j < 11; j++)
                     if (j >= a && j <= b)
                         new ShieldPiece(this, '', x + j * 10, y + i * 10);
-                a--; b++;
+                a--;
+                b++;
             } else {
                 for (let j = 0; j < 11; j++)
                     if (!(j >= c && j <= d))
                         new ShieldPiece(this, '', x + j * 10, y + i * 10);
 
                 if (i < 3) {
-                    c--;d++;
+                    c--;
+                    d++;
                 }
             }
         }
@@ -162,7 +160,7 @@ export class Main extends Phaser.Scene {
         let lastEnemy;
         let buttonEnemy;
 
-        if(!this.enemiesGroupIsEmpty()) {
+        if (!this.enemiesGroupIsEmpty()) {
             for (let i = 0; i < this.enemiesReferGrid.length; i++) {
                 for (let j = this.enemiesReferGrid[i].length - 1; j >= 0; j--) {
                     if (this.enemiesReferGrid[i][j] && j > maxXEnemy) {
@@ -181,7 +179,7 @@ export class Main extends Phaser.Scene {
                     }
                 }
             }
-        }else{
+        } else {
             this.scene.pause('main');
 
             this.scene.launch('generalMessage');
@@ -189,11 +187,11 @@ export class Main extends Phaser.Scene {
         return this.correctEnemiesRefer([firstEnemy, lastEnemy, buttonEnemy]);
     }
 
-    enemiesGroupIsEmpty(){
+    enemiesGroupIsEmpty() {
         let result = true;
 
         this.enemies.getChildren().forEach((enemy: Enemy) => {
-            if(enemy.active) result = false;
+            if (enemy.active) result = false;
         });
 
         return result;
