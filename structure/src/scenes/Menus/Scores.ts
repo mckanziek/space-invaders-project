@@ -3,6 +3,8 @@ import {Button} from "../../gameObjs/CustomObjs/Button";
 export class Scores extends Phaser.Scene {
     private camera: Phaser.Cameras.Scene2D.CameraManager | any;
 
+    private graphics: Phaser.GameObjects.Graphics | any;
+
     private titleLabel: Phaser.GameObjects.Text | any;
     private buttonMenu: Button | any;
 
@@ -30,6 +32,15 @@ export class Scores extends Phaser.Scene {
         this.camera = this.cameras.add(0, 0, this.sys.canvas.width, this.sys.canvas.height);
         this.camera.setBackgroundColor('rgba(0, 0, 0, 1)');
 
+        this.graphics = this.add.graphics({
+            x: 0,
+            y: 0,
+            fillStyle: {
+                color: 0xff0000,
+                alpha: 1
+            }
+        });
+
         if (sessionStorage.getItem('scores') != null && Scores.scores.length > 0) {
             // @ts-ignore
             Scores.scores = JSON.parse(sessionStorage.getItem('scores'));
@@ -50,6 +61,8 @@ export class Scores extends Phaser.Scene {
                 this.scene.start('menu');
             }
         );
+
+        this.graphics.fillRect((this.sys.canvas.width - 400) / 2, 222, 400, 3);
 
         this.scene.get('menu').events.on('updateScores', this.updateScores, this);
     }
@@ -75,17 +88,6 @@ export class Scores extends Phaser.Scene {
 
         this.textGroup.push(textMax);
 
-        let graphics = this.add.graphics({
-            x: 0,
-            y: 0,
-            fillStyle: {
-                color: 0xff0000,
-                alpha: 1
-            }
-        });
-
-        graphics.fillRect((this.sys.canvas.width - 400) / 2, 222, 400, 3);
-
         let yRefer = 0;
         let referDate = "";
         this.reformatScores().forEach(data => {
@@ -103,8 +105,6 @@ export class Scores extends Phaser.Scene {
             yRefer += 40;
             referDate = data[1];
         });
-
-        console.log(Scores.scores)
     }
 
     reformatScores(){
