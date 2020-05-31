@@ -179,9 +179,11 @@ export class Main extends Phaser.Scene {
      * @param enemyShot
      */
     checkCollisionShotEnemy(enemyShot: any) {
+        let scene = this;
         let player = this.player;
 
         this.physics.add.overlap(enemyShot, player, function () {
+            scene.sound.play('playerDeath');
             player.mainScene.events.emit('decreaseHealth');
             enemyShot.destroy();
         });

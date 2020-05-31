@@ -61,7 +61,7 @@ export class Lose extends Phaser.Scene {
         let gameMode = (this.scene.get('gameHud') as GameHud).getGameMode();
         let score = (this.scene.get('gameHud') as GameHud).getScore();
 
-        this.messageLabel = this.add.text(centerX, this.sys.canvas.height / 10 * 3.6, "Hai perso bitch",
+        this.messageLabel = this.add.text(centerX, this.sys.canvas.height / 10 * 3.6, "Hai perso umano",
             {font: '77px arc-font', fill: '#ff0000'}
         ).setOrigin(0.5);
 
