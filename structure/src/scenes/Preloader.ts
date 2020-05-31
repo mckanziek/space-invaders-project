@@ -54,6 +54,7 @@ export class Preloader extends Phaser.Scene {
         this.load.audio("playerShoot", "./assets/audio/shoot.wav");
         this.load.audio("playerKilled", "./assets/audio/explosion.wav");
         this.load.audio("enemyKilled", "./assets/audio/invaderkilled.wav");
+        this.load.audio("ufo", './assets/audio/ufo_lowpitch2.wav');
 
         this.load.spritesheet('alien00', './assets/spritesheets/verde.png', { frameWidth: 40, frameHeight: 40});
         this.load.spritesheet('alien10', './assets/spritesheets/arancione.png', { frameWidth: 55, frameHeight: 45});

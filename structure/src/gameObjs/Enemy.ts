@@ -130,7 +130,7 @@ export class Enemy extends Phaser.GameObjects.Sprite {
         let speedSign = (Enemy.speed < 0) ? -1 : 1;
         let newSpeed = this.point / 10;
 
-        if (Math.abs(Enemy.speed + newSpeed * speedSign) < 16) {
+        if (Math.abs(Enemy.speed + newSpeed * speedSign) < 15) {
             Enemy.speed += newSpeed * speedSign;
             Enemy.enemyMoveDelay -= this.point * 2;
         }

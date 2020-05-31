@@ -28,16 +28,18 @@ export class Ufo extends Phaser.GameObjects.Image {
         this.scene.add.existing(this);
         this.setScale(0.9);
 
-        this.initMove(this);
+        this.initMove(scene, this);
+        scene.sound.play('ufo', {loop: true});
     }
 
     /**
      * Questo metodo serve per spostare le istanze di Ufo
      * Utilizza l'oggetto Tweens di faser
      *
+     * @param scene Oggetto da dove accedo agli audio
      * @param obj Oggetto da spostare
      */
-    initMove(obj: Ufo) {
+    initMove(scene: any, obj: Ufo) {
         this.scene.tweens.add({
             targets: this,
             x: this.x - 969,
@@ -45,6 +47,7 @@ export class Ufo extends Phaser.GameObjects.Image {
             ease: 'Linear',
             duration: 6666,
             onComplete: function () {
+                scene.sound.stopAll();
                 obj.destroy();
                 Ufo.ufoLives = [];
             }
@@ -64,6 +67,8 @@ export class Ufo extends Phaser.GameObjects.Image {
          * Viene aumentato lo score del giocatore
          */
         this.mainScene.events.emit('incrementScore', 100);
+
+        this.mainScene.sound.stopAll();
 
         this.destroy();
         Ufo.ufoLives = [];

@@ -155,7 +155,6 @@ export class Main extends Phaser.Scene {
             }
         });
 
-
         if (Ufo.ufoLives.length == 0) {
             if (this.enemiesGroupLength() % 19 == 0)
                 Ufo.ufoLives.push(new Ufo(this, 'ufo'));
