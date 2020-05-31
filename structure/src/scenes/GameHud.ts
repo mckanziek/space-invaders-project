@@ -75,7 +75,7 @@ export class GameHud extends Phaser.Scene {
 
         this.pauseButton = new Button(this, this.sys.canvas.width - 45, this.sys.canvas.height - 25, "Pausa", 35,
             () => {
-                this.scene.pause('main');
+                this.scene.sleep('main');
                 this.scene.launch('pauseMenu');
             }
         );
@@ -162,7 +162,6 @@ export class GameHud extends Phaser.Scene {
      */
     pushScore() {
         Scores.scores.push([this.score, this.getDate()]);
-        console.log(Scores.scores);
     }
 
     /**

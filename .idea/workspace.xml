@@ -19,12 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="General Changes &amp; Ufo audio">
+    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="General update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/game.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/game.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Player.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Ufo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Ufo.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/scenes/GameHud.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/GameHud.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/scenes/GeneralMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/GeneralMessage.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/scenes/Preloader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Preloader.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590919995272</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="General update">
+      <created>1590922328250</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1590922328250</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +235,8 @@
     <MESSAGE value="Enemies animations &amp; Ufo extra point" />
     <MESSAGE value="Ufo bonus animation" />
     <MESSAGE value="General Changes &amp; Ufo audio" />
-    <option name="LAST_COMMIT_MESSAGE" value="General Changes &amp; Ufo audio" />
+    <MESSAGE value="General update" />
+    <option name="LAST_COMMIT_MESSAGE" value="General update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="26" y="99" width="890" height="915" key="CommitChangelistDialog2" timestamp="1586871182655">

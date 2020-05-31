@@ -103,6 +103,7 @@ export class Player extends Phaser.GameObjects.Image {
          */
         if (this.customKeys.D.isDown){
             let test = new Shot(this.scene, this.x, this.y, -475, 'shotSprt0');
+            this.bulletsAlive.add(test);
             this.mainScene.checkCollisionShotPlayer(test);
         }
     }
