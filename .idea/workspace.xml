@@ -19,11 +19,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Enemies animations &amp; Ufo extra point">
+    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Ufo bonus animation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/game.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/game.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/CustomObjs/Button.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/CustomObjs/Button.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Player.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/ShieldPiece.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/ShieldPiece.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Shot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Shot.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Ufo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Ufo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/scenes/GameHud.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/GameHud.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/scenes/GeneralMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/GeneralMessage.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/scenes/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Menus/Lose.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Menus/Lose.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Menus/Menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Menus/Menu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Menus/PauseMenu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Menus/PauseMenu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Menus/Scores.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Menus/Scores.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/scenes/Preloader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Preloader.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -175,19 +186,18 @@
       <option name="project" value="LOCAL" />
       <updated>1590854025948</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Ufo bonus animation">
+      <created>1590862521856</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1590862521856</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/src/main.js" />
-        <option value="$PROJECT_DIR$/src/scenes/preload.js" />
-        <option value="$PROJECT_DIR$/src/scenes/boot.js" />
-        <option value="$PROJECT_DIR$/src/scenes/game.js" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -219,7 +229,8 @@
     <MESSAGE value="Enemies Collision with shield correction" />
     <MESSAGE value="End game" />
     <MESSAGE value="Enemies animations &amp; Ufo extra point" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enemies animations &amp; Ufo extra point" />
+    <MESSAGE value="Ufo bonus animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ufo bonus animation" />
   </component>
   <component name="WindowStateProjectService">
     <state x="26" y="99" width="890" height="915" key="CommitChangelistDialog2" timestamp="1586871182655">
@@ -247,9 +258,9 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="681" y="315" width="548" height="448" key="refactoring.ChangeSignatureDialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590672718852" />
-    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1590844558735">
+    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1590885048582">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590844558735" />
+    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590885048582" />
   </component>
 </project>

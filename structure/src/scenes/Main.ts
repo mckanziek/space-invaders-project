@@ -3,25 +3,67 @@ import {ShieldPiece} from '../gameObjs/ShieldPiece';
 import {Enemy} from '../gameObjs/Enemy';
 import {Ufo} from '../gameObjs/Ufo';
 
+/**
+ * Classe figlia di Phaser.Scene
+ *
+ * Questa classe si occupa di gestire tutto il gioco
+ */
 export class Main extends Phaser.Scene {
+    /**
+     * GameRound è il riferimento del round attuale del gioco
+     */
     private gameMode: integer = 0;
+    /**
+     * Key serve per gestire gli eventi da tastiera
+     * per gli spostamenti del giocatore
+     */
     private key: Phaser.Input.Keyboard.KeyboardManager | any;
 
     private player: Player | any;
 
+    /**
+     * EnemiesPoints serve per avere un riferimento di quanti punti
+     * verrano segnati ai nemici quando verranno creati
+     */
     private enemiesPoints = [30, 20, 20, 10, 10];
+    /**
+     * EnemiesSprites serve per avere un riferimento di quali sprite
+     * verranno assegnati ai nemici quando verranno creati
+     */
     private enemiesSprites = [0, 0, 1, 1, 2];
 
+    /**
+     * EnemiesShootTiming serve per impostare quanto tempo deve passare
+     * prima che i nemici possano fare un'altro sparo
+     */
     private enemiesShootTiming = 0;
     private enemiesShootDelay: integer | any;
+    /**
+     * EnemiesMarginGrid è il valore di quanto spazio c'è tra un nemico
+     * e l'altro
+     */
     private enemiesMarginGrid: number = 55;
+    /**
+     * EnemiesReferGrid è una griglia di riferimento per sapere
+     * dove si trova uno specifico nemico
+     */
     private enemiesReferGrid: Array<number[]> | any;
+    /**
+     * Enemies è il gruppo che contiene tutti i nemici creati
+     */
     private enemies: Phaser.GameObjects.Group | any;
 
     constructor() {
         super({key: "main"});
     }
 
+    /**
+     * Init è un metodo predefinito di tutti gli oggetti di Phaser
+     * viene usato per inizializzare o creare componenti
+     *
+     * @param data Tramite questo parametro viene specificata
+     * la modalità di gioco
+     */
     init(data: any) {
         this.registry.set("gameMode", data.gameMode);
         this.gameMode = data.gameMode;
@@ -30,8 +72,12 @@ export class Main extends Phaser.Scene {
         this.enemies = this.add.group({runChildUpdate: true});
     }
 
+    /**
+     * Create è un metodo predefinito di tutti gli oggetti di Phaser
+     * In questo caso viene usato per istanziare il giocatore principale ed i nemici
+     */
     create() {
-        this.player = new Player(this, 'playerSprt' + this.gameMode, this.key);
+        this.player = new Player(this, 'player' + this.gameMode, this.key);
 
         for (let i = 0; i < 4; i++)
             this.initShield(96 + (i * 161), this.sys.canvas.height - 202);
@@ -58,6 +104,12 @@ export class Main extends Phaser.Scene {
         Ufo.ufoLives = [];
     }
 
+    /**
+     * Questo metodo predefinito degli oggetti Phaser, serve per aggiornare costantemente la posizione
+     * del giocatore principale e i nemici
+     *
+     * @param time
+     */
     update(time: integer) {
         this.player.move(time);
 
@@ -74,6 +126,12 @@ export class Main extends Phaser.Scene {
         }
     }
 
+    /**
+     * Questo metodo serve per controllare se ci sono collisioni tra lo sparo
+     * del giocatore principale e un nemico, lo scudo oppure un Ufo
+     *
+     * @param playerShot Oggetto Shot generato dal giocatore
+     */
     checkCollisionShotPlayer(playerShot: any) {
         let grid = this.enemiesReferGrid;
 
@@ -98,20 +156,26 @@ export class Main extends Phaser.Scene {
         });
 
 
-            if(Ufo.ufoLives.length == 0){
-                if(this.enemiesGroupLength() % 19 == 0)
-                    Ufo.ufoLives.push(new Ufo(this, 'ufo'));
-            }else{
-                let ufo = Ufo.ufoLives[0];
-                this.physics.add.overlap(playerShot, ufo, function () {
-                    ufo.die();
-                    playerShot.destroy();
-                });
-            }
+        if (Ufo.ufoLives.length == 0) {
+            if (this.enemiesGroupLength() % 19 == 0)
+                Ufo.ufoLives.push(new Ufo(this, 'ufo'));
+        } else {
+            let ufo = Ufo.ufoLives[0];
+            this.physics.add.overlap(playerShot, ufo, function () {
+                ufo.die();
+                playerShot.destroy();
+            });
+        }
 
         this.enemiesReferGrid = grid;
     }
 
+    /**
+     * Questo metodo serve per controllare se ci sono collisioni tra
+     * un colpo sparato dai nemici ed il giocatore principale o lo scudo
+     *
+     * @param enemyShot
+     */
     checkCollisionShotEnemy(enemyShot: any) {
         let player = this.player;
 
@@ -130,16 +194,26 @@ export class Main extends Phaser.Scene {
         });
     }
 
+    /**
+     * Questo metodo serve per controllare se ci sono collisioni tra i nemici
+     * e gli scudi
+     */
     checkCollisionEnemy() {
         this.enemies.getChildren().forEach((enemy: Enemy) => {
             ShieldPiece.pieces.forEach((piece: ShieldPiece) => {
                 this.physics.add.overlap(enemy, piece, function () {
-                    if(enemy.active) piece.destroy();
+                    if (enemy.active) piece.destroy();
                 });
             });
         });
     }
 
+    /**
+     * Questo metodo serve per generare lo scudo con la forma
+     *
+     * @param x Posizione x dello scudo
+     * @param y Posizioni y dello scudo
+     */
     initShield(x: integer, y: integer) {
         let a = 3;
         let b = 7;
@@ -148,16 +222,19 @@ export class Main extends Phaser.Scene {
         let d = 6;
 
         for (let i = 0; i < 7; i++) {
+            let randomNum = Math.floor(Math.random() * 3);
+            let sprite = (this.gameMode == 0) ? 'shield1' : 'shield' + randomNum;
+
             if (i < 4) {
                 for (let j = 0; j < 11; j++)
                     if (j >= a && j <= b)
-                        new ShieldPiece(this, '', x + j * 10, y + i * 10);
+                        new ShieldPiece(this, x + j * 9.6, y + i * 9.6, sprite);
                 a--;
                 b++;
             } else {
                 for (let j = 0; j < 11; j++)
                     if (!(j >= c && j <= d))
-                        new ShieldPiece(this, '', x + j * 10, y + i * 10);
+                        new ShieldPiece(this, x + j * 9.6, y + i * 9.6, sprite);
 
                 if (i < 3) {
                     c--;
@@ -167,6 +244,12 @@ export class Main extends Phaser.Scene {
         }
     }
 
+    /**
+     * Questo metodo serve per trovare quali sono i nemici alle estremita
+     * del gruppo a siinistra, destra e sotto
+     *
+     * @return Array di oggetti Enemy
+     */
     getEnemiesAreaRange() {
         let minXEnemy = 10;
         let maxXEnemy = 0;
@@ -203,6 +286,9 @@ export class Main extends Phaser.Scene {
         return this.correctEnemiesRefer([firstEnemy, lastEnemy, buttonEnemy]);
     }
 
+    /**
+     * @return enemies il numero di nemici vivi
+     */
     enemiesGroupLength() {
         let enemies = 0;
 
@@ -213,6 +299,10 @@ export class Main extends Phaser.Scene {
         return enemies;
     }
 
+    /**
+     * @param refers Array con i riferimenti giusti dei nemici alle estremità nel
+     * caso in cui un nemico sia il riferimento di piü di due estremi
+     */
     correctEnemiesRefer(refers: any) {
         let correction = [];
 
@@ -228,6 +318,9 @@ export class Main extends Phaser.Scene {
         return correction;
     }
 
+    /**
+     * @return buttonEnemies un array contenenti tutti i nemici piü vicini al bordo sud
+     */
     getEnemiesShooting() {
         const buttonEnemies = [];
 
@@ -239,6 +332,10 @@ export class Main extends Phaser.Scene {
         return buttonEnemies
     }
 
+    /**
+     * Questo metodo serve per diminuire il tempo che ci mette
+     * un nemico a sparare
+     */
     decreaseEnemiesShootDelay() {
         this.enemiesShootDelay -= (this.enemiesShootDelay - 50 < 1500) ? 50 : 0;
     }

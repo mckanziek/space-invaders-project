@@ -3,12 +3,32 @@ import {Main} from "../Main";
 
 import {Button} from "../../gameObjs/CustomObjs/Button";
 
+/**
+ * Classe figlia di Phaser.Scene
+ *
+ * Questa classe serve per creare il menu principale del gioco
+ */
 export class Menu extends Phaser.Scene {
+    /**
+     * Camera viene usato peer focalizzare un punto nel gioco
+     * in questo caso tuttta la scene per poi mettere un background
+     * personalizzato
+     */
     private camera: Phaser.Cameras.Scene2D.CameraManager | any;
 
+    /**
+     * TitleLabel è l'oggetto per l'inserimento di del titolo nella scena
+     */
     private titleLabel: Phaser.GameObjects.Text | any;
+    /**
+     * DescriptionLabel è l'oggetto per l'inserimento di del testo di descrizione
+     * nella scena
+     */
     private descriptionLabel: Phaser.GameObjects.Text | any;
 
+    /**
+     * I bottoni servono per dirigere il giocatore nelle varie schermate
+     */
     private buttonStartNormal: Button | any;
     private buttonStartWeird: Button | any;
     private buttonScore: Button | any;
@@ -17,6 +37,10 @@ export class Menu extends Phaser.Scene {
         super({key: "menu"});
     }
 
+    /**
+     * Init è un metodo predefinito di tutti gli oggetti di Phaser
+     * viene usato per inizializzare o creare componenti
+     */
     init() {
         this.camera = this.cameras.add(0, 0, this.sys.canvas.width, this.sys.canvas.height);
         this.camera.setBackgroundColor('rgba(0, 0, 0, 1)');
@@ -24,6 +48,10 @@ export class Menu extends Phaser.Scene {
         this.events.emit('updateScores');
     }
 
+    /**
+     * Create è un metodo predefinito di tutti gli oggetti di Phaser
+     * In questo caso viene usato per istanziare i testi e i bottoni del menu principale
+     */
     create() {
         let centerX = this.sys.canvas.width / 2;
 
