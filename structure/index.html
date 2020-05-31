@@ -2,16 +2,17 @@
     <head>
         <meta charset="utf-8" />
         <title>Space Invaders</title>
-
-        <style>
-            @font-face{
-                font-family: arc-font;
-                src: url('./assets/fonts/arcade.ttf');
-            }
-        </style>
     </head>
 
     <body class="body">
         <div id="canvas"></div>
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        const junction_font = new FontFace('arc-font', 'url("./assets/fonts/arcade.ttf")');
+        junction_font.load().then(function(loaded_face) {
+            document.fonts.add(loaded_face);
+            document.body.style.fontFamily = 'arc-font';
+        }).catch();
+    </script>
 </html>
