@@ -155,9 +155,12 @@ export class Main extends Phaser.Scene {
             }
         });
 
+        let randomNum = Math.floor(Math.random() * 10);
+        let ufoDirection = (randomNum % 2 == 0) ? this.sys.canvas.width + 40 : -40;
+
         if (Ufo.ufoLives.length == 0) {
             if (this.enemiesGroupLength() % 19 == 0)
-                Ufo.ufoLives.push(new Ufo(this, 'ufo'));
+                Ufo.ufoLives.push(new Ufo(this, ufoDirection, 'ufo'));
         } else {
             let ufo = Ufo.ufoLives[0];
             this.physics.add.overlap(playerShot, ufo, function () {

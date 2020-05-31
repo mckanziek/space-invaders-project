@@ -19,10 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Ufo bonus animation">
+    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="General Changes &amp; Ufo audio">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/game.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/game.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Player.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Ufo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Ufo.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/scenes/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Main.ts" afterDir="false" />
@@ -184,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590862521856</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="General Changes &amp; Ufo audio">
+      <created>1590919995272</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1590919995272</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +227,8 @@
     <MESSAGE value="End game" />
     <MESSAGE value="Enemies animations &amp; Ufo extra point" />
     <MESSAGE value="Ufo bonus animation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ufo bonus animation" />
+    <MESSAGE value="General Changes &amp; Ufo audio" />
+    <option name="LAST_COMMIT_MESSAGE" value="General Changes &amp; Ufo audio" />
   </component>
   <component name="WindowStateProjectService">
     <state x="26" y="99" width="890" height="915" key="CommitChangelistDialog2" timestamp="1586871182655">

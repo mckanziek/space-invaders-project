@@ -97,6 +97,13 @@ export class Player extends Phaser.GameObjects.Image {
         if (this.bulletsAlive.getLength() > 0)
             this.bulletsAlive.getChildren()[0].update();
 
-        //if (this.customKeys.D.isDown) this.mainScene.events.emit('decraseHealth');
+        /**
+         * Funzionalità aggiuntiva per fare delle prove.
+         * Serve per sparare colpi senza delay
+         */
+        if (this.customKeys.D.isDown){
+            let test = new Shot(this.scene, this.x, this.y, -475, 'shotSprt0');
+            this.mainScene.checkCollisionShotPlayer(test);
+        }
     }
 }

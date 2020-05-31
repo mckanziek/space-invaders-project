@@ -18,10 +18,11 @@ export class Ufo extends Phaser.GameObjects.Image {
     /**
      *
      * @param scene Istanza dove verrà inserito l'oggetto Ufo
+     * @param x Posizione x dalla quale spuntera l'ufo
      * @param spriteSheet Sprite da assegnare alle istanze di Ufo
      */
-    constructor(scene: any, spriteSheet: any) {
-        super(scene, scene.sys.canvas.width + 40, 70, spriteSheet);
+    constructor(scene: any, x: integer, spriteSheet: any) {
+        super(scene, x, 70, spriteSheet);
 
         this.mainScene = scene;
         this.scene.physics.world.enable(this);
@@ -42,7 +43,7 @@ export class Ufo extends Phaser.GameObjects.Image {
     initMove(scene: any, obj: Ufo) {
         this.scene.tweens.add({
             targets: this,
-            x: this.x - 969,
+            x: this.x + ((this.x < 0) ? 969 : -969),
             y: this.y,
             ease: 'Linear',
             duration: 6666,
