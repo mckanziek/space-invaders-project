@@ -204,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590939936494</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Init gitignore">
+      <created>1590940911849</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1590940911849</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,7 +252,8 @@
     <MESSAGE value="General update" />
     <MESSAGE value="Sprites &amp; Audios" />
     <MESSAGE value="General update &amp; clean code" />
-    <option name="LAST_COMMIT_MESSAGE" value="General update &amp; clean code" />
+    <MESSAGE value="Init gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init gitignore" />
   </component>
   <component name="WindowStateProjectService">
     <state x="26" y="99" width="890" height="915" key="CommitChangelistDialog2" timestamp="1586871182655">
@@ -261,10 +269,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="543" y="278" width="824" height="522" key="IDE.errors.dialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590600759137" />
-    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1590940630663">
+    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1590940973730">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590940630663" />
+    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590940973730" />
     <state x="735" y="458" width="439" height="163" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590685842426">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
