@@ -110,7 +110,7 @@ export class GameHud extends Phaser.Scene {
 
 
             for (let i = 1; i <= 3; i++) {
-                let healthObj = this.add.image(0, 0, 'playerHealthSprt' + gameMode);
+                let healthObj = this.add.image(0, 0, 'playerHealth' + gameMode);
                 let scale = 25 / healthObj.width;
 
                 healthObj.setScale(scale);

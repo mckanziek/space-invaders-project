@@ -18,7 +18,7 @@ export class GeneralMessage extends Phaser.Scene {
     /**
      * GameRound è il riferimento del round attuale del gioco
      */
-    private gameRound = 3;
+    private gameRound = 1;
 
     /**
      * MessageLabel è l'oggetto per l'inserimento di label nella scena

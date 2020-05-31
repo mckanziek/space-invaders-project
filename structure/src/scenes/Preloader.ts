@@ -9,20 +9,20 @@ export class Preloader extends Phaser.Scene {
             key: 'preloader',
             pack: {
                 files: [
-                    {type: 'image', key: 'ufo', url: './assets/spritesheets/ufo.png'},
+                    {type: 'image', key: 'ufo', url: './assets/spritesheets/enemies/ufo.png'},
 
-                    {type: 'image', key: 'shield0', url: './assets/spritesheets/red.png'},
-                    {type: 'image', key: 'shield1', url: './assets/spritesheets/green.png'},
-                    {type: 'image', key: 'shield2', url: './assets/spritesheets/blue.png'},
+                    {type: 'image', key: 'shield0', url: './assets/spritesheets/shield/red.png'},
+                    {type: 'image', key: 'shield1', url: './assets/spritesheets/shield/green.png'},
+                    {type: 'image', key: 'shield2', url: './assets/spritesheets/shield/blue.png'},
 
-                    {type: 'image', key: 'player0', url: './assets/spritesheets/player0.png'},
-                    {type: 'image', key: 'player1', url: './assets/spritesheets/player1.png'},
+                    {type: 'image', key: 'player0', url: './assets/spritesheets/player/player0.png'},
+                    {type: 'image', key: 'player1', url: './assets/spritesheets/player/player1.png'},
 
-                    {type: 'image', key: 'playerHealthSprt0', url: './assets/spritesheets/healthTest.png'},
-                    {type: 'image', key: 'playerHealthSprt1', url: './assets/spritesheets/meal.png'},
+                    {type: 'image', key: 'playerHealth0', url: './assets/spritesheets/health/healthTest.png'},
+                    {type: 'image', key: 'playerHealth1', url: './assets/spritesheets/health/meal.png'},
 
-                    {type: 'image', key: 'shotSprt0', url: './assets/spritesheets/shotTest.png'},
-                    {type: 'image', key: 'shotSprt1', url: './assets/spritesheets/potato.png'},
+                    {type: 'image', key: 'shot0', url: './assets/spritesheets/shot/shot.png'},
+                    {type: 'image', key: 'shot1', url: './assets/spritesheets/shot/potato.png'},
                 ]
             }
         });

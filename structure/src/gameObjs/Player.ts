@@ -82,7 +82,7 @@ export class Player extends Phaser.GameObjects.Image {
         if (this.inputKey.space.isDown && this.bulletsAlive.getLength() < 1 && this.shootTiming < time) {
             let gameMode = this.mainScene.registry.get("gameMode");
 
-            const shot = new Shot(this.scene, this.x, this.y, -475, 'shotSprt' + gameMode);
+            const shot = new Shot(this.scene, this.x, this.y, -475, 'shot' + gameMode);
             this.bulletsAlive.add(shot);
             this.mainScene.checkCollisionShotPlayer(shot);
 
@@ -102,7 +102,7 @@ export class Player extends Phaser.GameObjects.Image {
          * Serve per sparare colpi senza delay
          */
         if (this.customKeys.D.isDown){
-            let test = new Shot(this.scene, this.x, this.y, -475, 'shotSprt0');
+            let test = new Shot(this.scene, this.x, this.y, -475, 'shot0');
             this.bulletsAlive.add(test);
             this.mainScene.checkCollisionShotPlayer(test);
         }

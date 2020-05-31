@@ -21,7 +21,26 @@
   <component name="ChangeListManager">
     <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="General update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/structure/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/game.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/game.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/arancione.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/healthTest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/meal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/player0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/player1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/potato.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/shipTest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/shotTest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/ufo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/verde.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/viola.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Player.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/scenes/GameHud.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/GameHud.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/scenes/GeneralMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/GeneralMessage.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Preloader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Preloader.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,10 +275,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="543" y="278" width="824" height="522" key="IDE.errors.dialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590600759137" />
-    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1590924018784">
+    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1590928321330">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590924018784" />
+    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590928321330" />
     <state x="735" y="458" width="439" height="163" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590685842426">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

@@ -196,7 +196,7 @@ export class Enemy extends Phaser.GameObjects.Sprite {
     shoot() {
         let gameMode = Enemy.mainScene.registry.get("gameMode");
 
-        let shot = new Shot(Enemy.mainScene, this.x, this.y, 450, 'shotSprt' + gameMode);
+        let shot = new Shot(Enemy.mainScene, this.x, this.y, 450, 'shot' + gameMode);
         this.bulletsAlive.add(shot);
         Enemy.mainScene.checkCollisionShotEnemy(shot);
 
