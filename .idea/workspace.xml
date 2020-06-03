@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Sprites updates">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Preloader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Preloader.ts" afterDir="false" />
-    </list>
+    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Ufo sprite update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +78,7 @@
       <workItem from="1586870189440" duration="1071000" />
       <workItem from="1590829340131" duration="3726000" />
       <workItem from="1590959745327" duration="520000" />
-      <workItem from="1591193006012" duration="7654000" />
+      <workItem from="1591193006012" duration="8276000" />
     </task>
     <task id="LOCAL-00001" summary="commit test">
       <created>1586871199927</created>
@@ -238,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591208317868</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Ufo sprite update">
+      <created>1591211187059</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1591211187059</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +286,8 @@
     <MESSAGE value="Sprites directory correction" />
     <MESSAGE value="Resume game after pause bug fix" />
     <MESSAGE value="Sprites updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sprites updates" />
+    <MESSAGE value="Ufo sprite update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ufo sprite update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="26" y="99" width="890" height="915" key="CommitChangelistDialog2" timestamp="1586871182655">
@@ -303,10 +307,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="543" y="278" width="824" height="522" key="IDE.errors.dialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590600759137" />
-    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1591208342440">
+    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1591211790630">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1591208342440" />
+    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1591211790630" />
     <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590959826473" />
     <state x="735" y="458" width="439" height="163" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590685842426">
       <screen x="0" y="27" width="1920" height="1053" />
