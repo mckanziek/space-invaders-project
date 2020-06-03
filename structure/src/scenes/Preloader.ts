@@ -57,13 +57,13 @@ export class Preloader extends Phaser.Scene {
         this.load.audio("enemyKilled", "./assets/audio/invaderkilled.wav");
         this.load.audio("ufo", './assets/audio/ufo_lowpitch.wav');
 
-        this.load.spritesheet('alien00', './assets/spritesheets/verde.png', { frameWidth: 40, frameHeight: 40});
-        this.load.spritesheet('alien10', './assets/spritesheets/arancione.png', { frameWidth: 55, frameHeight: 45});
-        this.load.spritesheet('alien20', './assets/spritesheets/viola.png', { frameWidth: 55, frameHeight: 45});
+        this.load.spritesheet('alien00', './assets/spritesheets/enemies/verde.png', { frameWidth: 40, frameHeight: 40});
+        this.load.spritesheet('alien10', './assets/spritesheets/enemies/arancione.png', { frameWidth: 55, frameHeight: 45});
+        this.load.spritesheet('alien20', './assets/spritesheets/enemies/viola.png', { frameWidth: 55, frameHeight: 45});
 
-        this.load.spritesheet('alien01', './assets/spritesheets/verde.png', { frameWidth: 40, frameHeight: 40});
-        this.load.spritesheet('alien11', './assets/spritesheets/arancione.png', { frameWidth: 55, frameHeight: 45});
-        this.load.spritesheet('alien21', './assets/spritesheets/viola.png', { frameWidth: 55, frameHeight: 45});
+        this.load.spritesheet('alien01', './assets/spritesheets/enemies/verde.png', { frameWidth: 40, frameHeight: 40});
+        this.load.spritesheet('alien11', './assets/spritesheets/enemies/arancione.png', { frameWidth: 55, frameHeight: 45});
+        this.load.spritesheet('alien21', './assets/spritesheets/enemies/viola.png', { frameWidth: 55, frameHeight: 45});
     }
 
     /**
