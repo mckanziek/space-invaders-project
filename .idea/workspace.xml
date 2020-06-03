@@ -19,11 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Resume game after pause bug fix">
+    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Sprites updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/player/player1.png" beforeDir="false" afterPath="$PROJECT_DIR$/structure/assets/spritesheets/player/player1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Player.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/scenes/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structure/src/scenes/Preloader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Preloader.ts" afterDir="false" />
     </list>
@@ -63,7 +60,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../M152/Project_Game_XFiles" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Java/IntelJ/I3a/Browser_project" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/structure/node_modules/typescript/lib" />
     <property name="ts.rename.search.for.dynamic.occurrences" value="true" />
   </component>
@@ -85,7 +82,7 @@
       <workItem from="1586870189440" duration="1071000" />
       <workItem from="1590829340131" duration="3726000" />
       <workItem from="1590959745327" duration="520000" />
-      <workItem from="1591193006012" duration="6364000" />
+      <workItem from="1591193006012" duration="7654000" />
     </task>
     <task id="LOCAL-00001" summary="commit test">
       <created>1586871199927</created>
@@ -234,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591193913622</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Sprites updates">
+      <created>1591208317868</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1591208317868</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,17 +282,18 @@
     <MESSAGE value="Init gitignore" />
     <MESSAGE value="Sprites directory correction" />
     <MESSAGE value="Resume game after pause bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resume game after pause bug fix" />
+    <MESSAGE value="Sprites updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sprites updates" />
   </component>
   <component name="WindowStateProjectService">
     <state x="26" y="99" width="890" height="915" key="CommitChangelistDialog2" timestamp="1586871182655">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="26" y="99" width="890" height="915" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1586871182655" />
-    <state x="259" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1590845658226">
+    <state x="259" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1591208580414">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="259" y="311" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1586870388523" />
+    <state x="259" y="311" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1591208580414" />
     <state x="259" y="311" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590845658226" />
     <state width="322" height="207" key="Git.Branch.Popup" timestamp="1590959820091">
       <screen x="0" y="27" width="1920" height="1053" />
@@ -298,10 +303,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="543" y="278" width="824" height="522" key="IDE.errors.dialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590600759137" />
-    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1591193919600">
+    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1591208342440">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1591193919600" />
+    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1591208342440" />
     <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590959826473" />
     <state x="735" y="458" width="439" height="163" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590685842426">
       <screen x="0" y="27" width="1920" height="1053" />

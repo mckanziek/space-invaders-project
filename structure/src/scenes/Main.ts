@@ -162,7 +162,7 @@ export class Main extends Phaser.Scene {
 
         if (Ufo.ufoLives.length == 0) {
             if (this.enemiesGroupLength() % 19 == 0)
-                Ufo.ufoLives.push(new Ufo(this, ufoDirection, 'ufo'));
+                Ufo.ufoLives.push(new Ufo(this, ufoDirection, 'ufo' + this.gameMode));
         } else {
             let ufo = Ufo.ufoLives[0];
             this.physics.add.overlap(playerShot, ufo, function () {
