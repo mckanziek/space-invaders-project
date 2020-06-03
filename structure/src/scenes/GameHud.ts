@@ -75,7 +75,7 @@ export class GameHud extends Phaser.Scene {
 
         this.pauseButton = new Button(this, this.sys.canvas.width - 45, this.sys.canvas.height - 25, "Pausa", 35,
             () => {
-                this.scene.sleep('main');
+                this.scene.pause('main');
                 this.scene.launch('pauseMenu');
             }
         );
