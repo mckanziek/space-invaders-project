@@ -70,10 +70,11 @@ export class Enemy extends Phaser.GameObjects.Sprite {
      * @param x Posizione x dell'oggetto Enemy
      * @param y Posizione y dell'oggetto Enemy
      * @param spriteSheet Sprite da assegnare alle istanze di Enemy
+     * @param scale la scala con la quale saä ridimensionata la immagine
      * @param id Coordinate delle istanze di Enemy
      * @param point Valore della istanza Enemy di quando viene ucciso
      */
-    constructor(scene: any, x: number, y: number, spriteSheet: any, id: string, point: integer) {
+    constructor(scene: any, x: number, y: number, spriteSheet: any, scale: integer, id: string, point: integer) {
         super(scene, x, y, spriteSheet);
 
         this.id = id;
@@ -102,7 +103,7 @@ export class Enemy extends Phaser.GameObjects.Sprite {
         this.customY = this.y;
         this.scene.physics.world.enable(this);
         this.scene.add.existing(this);
-        this.setScale(0.8);
+        this.setScale(scale);
     }
 
     /**
@@ -151,8 +152,8 @@ export class Enemy extends Phaser.GameObjects.Sprite {
              * Controllo se una delle istanze nelle estremità tocca il bordo
              * per poi cambiare la direzione di spostamento
              */
-            if (!(dataPositions[1].x <= Enemy.canvas.width - (this.width * 1.2))
-                || !(dataPositions[0].x >= (this.width * 1.2))) {
+            if (!(dataPositions[1].x <= Enemy.canvas.width - 66) //1.2
+                || !(dataPositions[0].x >= 66)) {
                 Enemy.speed *= -1;
                 Enemy.goDown(dataPositions[2]);
             }

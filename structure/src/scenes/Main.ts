@@ -84,6 +84,7 @@ export class Main extends Phaser.Scene {
 
         this.enemiesReferGrid = [];
         this.enemiesShootDelay = 1666;
+        let enemiesScale = (this.gameMode) ? 0.5 : 0.8;
         for (let i = 0; i < 5; i++) {
             const row = [];
             for (let j = 0; j < 11; j++) {
@@ -91,6 +92,7 @@ export class Main extends Phaser.Scene {
                     (60 + (j * this.enemiesMarginGrid)),
                     (99 + (i * this.enemiesMarginGrid)),
                     'alien' + this.enemiesSprites[i] + this.gameMode,
+                    enemiesScale,
                     j + ";" + i,
                     this.enemiesPoints[i]
                 ));

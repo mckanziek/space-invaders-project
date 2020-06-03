@@ -9,7 +9,8 @@ export class Preloader extends Phaser.Scene {
             key: 'preloader',
             pack: {
                 files: [
-                    {type: 'image', key: 'ufo', url: './assets/spritesheets/enemies/ufo.png'},
+                    {type: 'image', key: 'ufo0', url: './assets/spritesheets/enemies/ufo.png'},
+                    {type: 'image', key: 'ufo1', url: './assets/spritesheets/enemies/ufo.png'},
 
                     {type: 'image', key: 'shield0', url: './assets/spritesheets/shield/red.png'},
                     {type: 'image', key: 'shield1', url: './assets/spritesheets/shield/green.png'},
@@ -61,9 +62,9 @@ export class Preloader extends Phaser.Scene {
         this.load.spritesheet('alien10', './assets/spritesheets/enemies/arancione.png', { frameWidth: 55, frameHeight: 45});
         this.load.spritesheet('alien20', './assets/spritesheets/enemies/viola.png', { frameWidth: 55, frameHeight: 45});
 
-        this.load.spritesheet('alien01', './assets/spritesheets/enemies/verde.png', { frameWidth: 40, frameHeight: 40});
-        this.load.spritesheet('alien11', './assets/spritesheets/enemies/arancione.png', { frameWidth: 55, frameHeight: 45});
-        this.load.spritesheet('alien21', './assets/spritesheets/enemies/viola.png', { frameWidth: 55, frameHeight: 45});
+        this.load.spritesheet('alien01', './assets/spritesheets/enemies/ghiggi.png', { frameWidth: 100, frameHeight: 100});
+        this.load.spritesheet('alien11', './assets/spritesheets/enemies/krah.png', { frameWidth: 100, frameHeight: 100});
+        this.load.spritesheet('alien21', './assets/spritesheets/enemies/repo.png', { frameWidth: 100, frameHeight: 100});
     }
 
     /**
@@ -75,8 +76,8 @@ export class Preloader extends Phaser.Scene {
         this.anims.create({key: 'move10', frames: this.anims.generateFrameNumbers('alien10', {start: 0, end: 2}), frameRate: 2, repeat: -1});
         this.anims.create({key: 'move20', frames: this.anims.generateFrameNumbers('alien20', {start: 0, end: 2}), frameRate: 2, repeat: -1});
 
-        this.anims.create({key: 'move01', frames: this.anims.generateFrameNumbers('alien01', {start: 0, end: 2}), frameRate: 2, repeat: -1});
-        this.anims.create({key: 'move11', frames: this.anims.generateFrameNumbers('alien11', {start: 0, end: 2}), frameRate: 2, repeat: -1});
-        this.anims.create({key: 'move21', frames: this.anims.generateFrameNumbers('alien21', {start: 0, end: 2}), frameRate: 2, repeat: -1});
+        this.anims.create({key: 'move01', frames: this.anims.generateFrameNumbers('alien01', {start: 0, end: 0}), frameRate: 2, repeat: -1});
+        this.anims.create({key: 'move11', frames: this.anims.generateFrameNumbers('alien11', {start: 0, end: 0}), frameRate: 2, repeat: -1});
+        this.anims.create({key: 'move21', frames: this.anims.generateFrameNumbers('alien21', {start: 0, end: 0}), frameRate: 2, repeat: -1});
     }
 }

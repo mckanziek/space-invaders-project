@@ -57,7 +57,7 @@ export class Player extends Phaser.GameObjects.Image {
         this.canvas = this.mainScene.sys.canvas;
 
         //calcolo la scala che dovranno avere gli oggetti in proporzione alla navicella
-        this.scale = 70 / this.width;
+        this.scale = (this.width == 100) ?  60 / this.width : 70 / this.width;
 
         //centralizzo la navicella
         this.x = this.canvas.width / 2;
