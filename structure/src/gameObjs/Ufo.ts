@@ -63,7 +63,7 @@ export class Ufo extends Phaser.GameObjects.Image {
         /**
          * Viene riprodotto un suono
          */
-        this.mainScene.sound.play("enemyKilled");
+        this.mainScene.sound.play("enemyKilled" + this.mainScene.gameMode);
         /**
          * Viene aumentato lo score del giocatore
          */
