@@ -86,7 +86,7 @@ export class Player extends Phaser.GameObjects.Image {
             this.bulletsAlive.add(shot);
             this.mainScene.checkCollisionShotPlayer(shot);
 
-            this.mainScene.sound.play('playerShoot');
+            this.mainScene.sound.play('playerShoot' + gameMode);
             this.shootTiming = time + 450;
         }
 

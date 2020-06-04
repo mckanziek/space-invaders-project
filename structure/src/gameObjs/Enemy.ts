@@ -28,6 +28,10 @@ export class Enemy extends Phaser.GameObjects.Sprite {
      */
     private static mainScene: Phaser.Scene | any;
     /**
+     * GameMode serve per tenere traccia di quale sia la modalitä di gioco attuale
+     */
+    private gameMode: integer | any;
+    /**
      * Canvas serve per tenere un riferimento del canvas usato per renderizzare il gioco
      */
     private static canvas: any;
@@ -91,6 +95,7 @@ export class Enemy extends Phaser.GameObjects.Sprite {
 
         Enemy.mainScene = scene;
         Enemy.canvas = scene.sys.canvas;
+        this.gameMode = scene.registry.get("gameMode");
 
         try {
             /**
@@ -195,9 +200,7 @@ export class Enemy extends Phaser.GameObjects.Sprite {
      * Questo metodo serve per sparare un colpo
      */
     shoot() {
-        let gameMode = Enemy.mainScene.registry.get("gameMode");
-
-        let shot = new Shot(Enemy.mainScene, this.x, this.y, 450, 'shot' + gameMode);
+        let shot = new Shot(Enemy.mainScene, this.x, this.y, 450, 'shot' + this.gameMode);
         this.bulletsAlive.add(shot);
         Enemy.mainScene.checkCollisionShotEnemy(shot);
 
@@ -222,7 +225,7 @@ export class Enemy extends Phaser.GameObjects.Sprite {
         /**
          * Viene riprodotto un suono
          */
-        Enemy.mainScene.sound.play("enemyKilled");
+        Enemy.mainScene.sound.play("enemyKilled" + this.gameMode, {volume: (this.gameMode) ? 2 : 1});
         /**
          * Viene aumentato lo score del giocatore
          */

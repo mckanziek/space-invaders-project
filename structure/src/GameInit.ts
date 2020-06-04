@@ -18,7 +18,8 @@ const config: GameConfig = {
         arcade: {
             gravity: {y: 0},
             debug: false
-        }
+        },
+        fps: 60,
     },
     scene: [Preloader, Main, Menu, PauseMenu, GeneralMessage, Scores, GameHud, Lose],
 };

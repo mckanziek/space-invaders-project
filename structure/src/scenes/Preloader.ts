@@ -52,11 +52,17 @@ export class Preloader extends Phaser.Scene {
      * Qua viene usato per caricare gli audio e caricare gli sprite
      */
     preload(){
-        this.load.audio("playerShoot", "./assets/audio/shoot.wav");
-        this.load.audio("playerDeath", "./assets/audio/explosionPlayer.wav");
-        this.load.audio("playerKilled", "./assets/audio/explosion.wav");
-        this.load.audio("enemyKilled", "./assets/audio/invaderkilled.wav");
-        this.load.audio("ufo", './assets/audio/ufo_lowpitch.wav');
+        this.load.audio("playerShoot0", "./assets/audio/shoot.wav");
+        this.load.audio("playerShoot1", "./assets/audio/shoot1.wav");
+
+        this.load.audio("playerDeath0", "./assets/audio/explosionPlayer.wav");
+        this.load.audio("playerDeath1", "./assets/audio/explosionPlayer1.wav");
+
+        this.load.audio("enemyKilled0", "./assets/audio/invaderkilled.wav");
+        this.load.audio("enemyKilled1", "./assets/audio/invaderkilled1.wav");
+
+        this.load.audio("ufo0", './assets/audio/ufo_lowpitch.wav');
+        this.load.audio("ufo1", './assets/audio/ufo1.wav');
 
         this.load.spritesheet('alien00', './assets/spritesheets/enemies/verde.png', { frameWidth: 40, frameHeight: 40});
         this.load.spritesheet('alien10', './assets/spritesheets/enemies/arancione.png', { frameWidth: 55, frameHeight: 45});

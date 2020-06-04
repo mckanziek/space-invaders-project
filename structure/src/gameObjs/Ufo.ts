@@ -30,7 +30,7 @@ export class Ufo extends Phaser.GameObjects.Image {
         this.setScale(0.9);
 
         this.initMove(scene, this);
-        scene.sound.play('ufo', {loop: true});
+        scene.sound.play('ufo' + scene.gameMode, {loop: true, volume: (scene.gameMode) ? 3 : 1});
     }
 
     /**

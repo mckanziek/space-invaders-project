@@ -185,7 +185,7 @@ export class Main extends Phaser.Scene {
         let player = this.player;
 
         this.physics.add.overlap(enemyShot, player, function () {
-            scene.sound.play('playerDeath');
+            scene.sound.play('playerDeath' + scene.gameMode);
             player.mainScene.events.emit('decreaseHealth');
             enemyShot.destroy();
         });
