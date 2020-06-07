@@ -19,11 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Remove git-working.html">
+    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Clean Code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/gameObjs/Enemy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/GeneralMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/GeneralMessage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +85,7 @@
       <workItem from="1591272298125" duration="5606000" />
       <workItem from="1591311705677" duration="146000" />
       <workItem from="1591339576918" duration="390000" />
-      <workItem from="1591539208945" duration="6515000" />
+      <workItem from="1591539208945" duration="11154000" />
     </task>
     <task id="LOCAL-00001" summary="commit test">
       <created>1586871199927</created>
@@ -285,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591539301544</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Clean Code">
+      <created>1591562107346</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1591562107346</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +314,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Main Menu" />
     <MESSAGE value="Pause menu" />
     <MESSAGE value="Game mode &amp; Score history" />
     <MESSAGE value="Game shields" />
@@ -334,7 +338,8 @@
     <MESSAGE value="Ufo bug fix" />
     <MESSAGE value="2 Shot player audio" />
     <MESSAGE value="Remove git-working.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove git-working.html" />
+    <MESSAGE value="Clean Code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clean Code" />
   </component>
   <component name="WindowStateProjectService">
     <state x="26" y="99" width="890" height="915" key="CommitChangelistDialog2" timestamp="1586871182655">
