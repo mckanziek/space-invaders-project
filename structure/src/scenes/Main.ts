@@ -42,7 +42,7 @@ export class Main extends Phaser.Scene {
      * EnemiesMarginGrid è il valore di quanto spazio c'è tra un nemico
      * e l'altro
      */
-    private enemiesMarginGrid: number = 55;
+    private enemiesMarginGrid: integer = 55;
     /**
      * EnemiesReferGrid è una griglia di riferimento per sapere
      * dove si trova uno specifico nemico

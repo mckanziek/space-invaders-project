@@ -21,7 +21,7 @@ export class Enemy extends Phaser.GameObjects.Sprite {
     /**
      * CustomY serve per tenere traccia del vero valore di Y del nemico
      */
-    private customY: number;
+    private customY: integer;
 
     /**
      * MainScene serve per avere un riferimento della scena principale del gioco
@@ -30,7 +30,7 @@ export class Enemy extends Phaser.GameObjects.Sprite {
     /**
      * GameMode serve per tenere traccia di quale sia la modalitä di gioco attuale
      */
-    private gameMode: integer | any;
+    private readonly gameMode: integer | any;
     /**
      * Canvas serve per tenere un riferimento del canvas usato per renderizzare il gioco
      */
@@ -45,8 +45,8 @@ export class Enemy extends Phaser.GameObjects.Sprite {
      * Grandezze dell'oggetto nemico,
      * serve per poter accedere da metodi statici
      */
-    private static width: number;
-    private static height: number;
+    private static width: integer;
+    private static height: integer;
 
     /**
      * Speed è il valore di quanto avanza l'oggetto nemico
@@ -170,16 +170,16 @@ export class Enemy extends Phaser.GameObjects.Sprite {
     /**
      * Questo metodo serve per spostare in giu tutte le istanze di Enemy
      *
-     * @param buttonEnemy La istanza di Enemy piü vicina al bordo sud della scena
+     * @param bottomEnemy La istanza di Enemy piü vicina al bordo sud della scena
      */
-    static goDown(buttonEnemy: Enemy) {
+    static goDown(bottomEnemy: Enemy) {
 
         /**
          * Se la istanza piü vicina al bordo sud non supera il limite
          * tutte le istanze di Enemy scendono. Se accade il contrario
          * il gioco finisce
          */
-        if (buttonEnemy.customY < Enemy.canvas.height - (Enemy.height * 2)) {
+        if (bottomEnemy.customY < Enemy.canvas.height - (Enemy.height * 2)) {
             setTimeout(function () {
                 // @ts-ignore
                 Enemy.mainScene.enemies.getChildren().forEach(enemy => {

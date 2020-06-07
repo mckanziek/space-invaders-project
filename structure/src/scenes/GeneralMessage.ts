@@ -29,7 +29,7 @@ export class GeneralMessage extends Phaser.Scene {
      * ButtonMenu è il bottone che serve per riportare al giocatore
      * nel menu principale
      */
-    private buttonMenu: Phaser.GameObjects.Text | any;
+    private buttonMenu: Button| any;
 
     constructor() {
         super({key: "generalMessage"});
