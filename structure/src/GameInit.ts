@@ -19,6 +19,7 @@ const config: GameConfig = {
             gravity: {y: 0},
             debug: false
         },
+        autoCenter: true,
         fps: 60,
     },
     scene: [Preloader, Main, Menu, PauseMenu, GeneralMessage, Scores, GameHud, Lose],

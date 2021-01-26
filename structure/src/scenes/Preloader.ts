@@ -10,7 +10,7 @@ export class Preloader extends Phaser.Scene {
             pack: {
                 files: [
                     {type: 'image', key: 'ufo0', url: './assets/spritesheets/enemies/ufo.png'},
-                    {type: 'image', key: 'ufo1', url: './assets/spritesheets/enemies/debo.png'},
+                    {type: 'image', key: 'ufo1', url: './assets/spritesheets/enemies/alien.png'},
 
                     {type: 'image', key: 'shield0', url: './assets/spritesheets/shield/red.png'},
                     {type: 'image', key: 'shield1', url: './assets/spritesheets/shield/green.png'},
@@ -68,9 +68,9 @@ export class Preloader extends Phaser.Scene {
         this.load.spritesheet('alien10', './assets/spritesheets/enemies/arancione.png', { frameWidth: 55, frameHeight: 45});
         this.load.spritesheet('alien20', './assets/spritesheets/enemies/viola.png', { frameWidth: 55, frameHeight: 45});
 
-        this.load.spritesheet('alien01', './assets/spritesheets/enemies/ghiggi.png', { frameWidth: 100, frameHeight: 100});
-        this.load.spritesheet('alien11', './assets/spritesheets/enemies/krah.png', { frameWidth: 100, frameHeight: 100});
-        this.load.spritesheet('alien21', './assets/spritesheets/enemies/repo.png', { frameWidth: 100, frameHeight: 100});
+        this.load.spritesheet('alien01', './assets/spritesheets/enemies/alien1.png', { frameWidth: 100, frameHeight: 100});
+        this.load.spritesheet('alien11', './assets/spritesheets/enemies/alien2.png', { frameWidth: 100, frameHeight: 100});
+        this.load.spritesheet('alien21', './assets/spritesheets/enemies/alien3.png', { frameWidth: 100, frameHeight: 100});
     }
 
     /**

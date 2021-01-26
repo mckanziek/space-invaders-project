@@ -19,9 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="Clean Code">
+    <list default="true" id="709ed03e-694d-4c70-bc2a-434ac277400c" name="Default Changelist" comment="README update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/enemies/debo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/enemies/ghiggi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/enemies/krah.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/enemies/repo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/assets/spritesheets/player/player1.png" beforeDir="false" afterPath="$PROJECT_DIR$/structure/assets/spritesheets/player/player1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/structure/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/GameInit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/GameInit.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure/src/scenes/Preloader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/structure/src/scenes/Preloader.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,15 +66,30 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Java/IntelJ/I3a/Browser_project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/structure/node_modules/typescript/lib" />
     <property name="ts.rename.search.for.dynamic.occurrences" value="true" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/structure/src/scenes/Menus" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -85,7 +107,10 @@
       <workItem from="1591272298125" duration="5606000" />
       <workItem from="1591311705677" duration="146000" />
       <workItem from="1591339576918" duration="390000" />
-      <workItem from="1591539208945" duration="11154000" />
+      <workItem from="1591539208945" duration="12627000" />
+      <workItem from="1602246253606" duration="619000" />
+      <workItem from="1606729562150" duration="604000" />
+      <workItem from="1611694550374" duration="3479000" />
     </task>
     <task id="LOCAL-00001" summary="commit test">
       <created>1586871199927</created>
@@ -290,11 +315,18 @@
       <option name="project" value="LOCAL" />
       <updated>1591562107346</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="README update">
+      <created>1591568077832</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1591568077832</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -314,7 +346,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Pause menu" />
     <MESSAGE value="Game mode &amp; Score history" />
     <MESSAGE value="Game shields" />
     <MESSAGE value="Enemy &amp; Shields collision" />
@@ -339,7 +370,8 @@
     <MESSAGE value="2 Shot player audio" />
     <MESSAGE value="Remove git-working.html" />
     <MESSAGE value="Clean Code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean Code" />
+    <MESSAGE value="README update" />
+    <option name="LAST_COMMIT_MESSAGE" value="README update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="26" y="99" width="890" height="915" key="CommitChangelistDialog2" timestamp="1586871182655">
@@ -360,10 +392,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="543" y="278" width="824" height="522" key="IDE.errors.dialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590600759137" />
-    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1591539303936">
+    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1591568087305">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1591539303936" />
+    <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1591568087305" />
     <state x="555" y="276" width="800" height="527" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590959826473" />
     <state x="735" y="458" width="439" height="163" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590685842426">
       <screen x="0" y="27" width="1920" height="1053" />
